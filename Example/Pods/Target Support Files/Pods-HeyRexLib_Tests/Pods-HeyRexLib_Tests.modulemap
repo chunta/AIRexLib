@@ -1,0 +1,6 @@
+framework module Pods_HeyRexLib_Tests {
+  umbrella header "Pods-HeyRexLib_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
