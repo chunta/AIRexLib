@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05EF8B7B242652B70014ADF4 /* HeyRex.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EF8B79242652B70014ADF4 /* HeyRex.m */; };
-		05EF8B7C242652B70014ADF4 /* HeyRex.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8B7A242652B70014ADF4 /* HeyRex.h */; };
 		05EF8BDE24271BA00014ADF4 /* QGInbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BD824271BA00014ADF4 /* QGInbox.h */; };
 		05EF8BDF24271BA00014ADF4 /* QGSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BD924271BA00014ADF4 /* QGSdk.h */; };
 		05EF8BE024271BA00014ADF4 /* AIQP+ReactNative.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BDA24271BA00014ADF4 /* AIQP+ReactNative.h */; };
@@ -21,8 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05EF8B79242652B70014ADF4 /* HeyRex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeyRex.m; path = HeyRexLib/Classes/HeyRex.m; sourceTree = "<group>"; };
-		05EF8B7A242652B70014ADF4 /* HeyRex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeyRex.h; path = HeyRexLib/Classes/HeyRex.h; sourceTree = "<group>"; };
 		05EF8BD724271BA00014ADF4 /* libQGSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQGSdk.a; path = HeyRexLib/Classes/libQGSdk.a; sourceTree = "<group>"; };
 		05EF8BD824271BA00014ADF4 /* QGInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGInbox.h; path = HeyRexLib/Classes/QGInbox.h; sourceTree = "<group>"; };
 		05EF8BD924271BA00014ADF4 /* QGSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGSdk.h; path = HeyRexLib/Classes/QGSdk.h; sourceTree = "<group>"; };
@@ -152,8 +148,6 @@
 				05EF8BD824271BA00014ADF4 /* QGInbox.h */,
 				05EF8BD924271BA00014ADF4 /* QGSdk.h */,
 				05EF8BDC24271BA00014ADF4 /* QGWKWebView.h */,
-				05EF8B7A242652B70014ADF4 /* HeyRex.h */,
-				05EF8B79242652B70014ADF4 /* HeyRex.m */,
 				3F378B5054A834C8803D57A7A9F76876 /* Pod */,
 				83311110EFC3F8B5DFF08C19D7DC0831 /* Support Files */,
 			);
@@ -188,7 +182,6 @@
 				05EF8BE024271BA00014ADF4 /* AIQP+ReactNative.h in Headers */,
 				05EF8BE124271BA00014ADF4 /* AIQP.h in Headers */,
 				B0D230AC085648814CA8C9B76A1FDEC7 /* HeyRexLib-umbrella.h in Headers */,
-				05EF8B7C242652B70014ADF4 /* HeyRex.h in Headers */,
 				05EF8BDE24271BA00014ADF4 /* QGInbox.h in Headers */,
 				05EF8BDF24271BA00014ADF4 /* QGSdk.h in Headers */,
 			);
@@ -258,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C5247099217618B9243E8D56D43D189 /* HeyRexLib-dummy.m in Sources */,
-				05EF8B7B242652B70014ADF4 /* HeyRex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
