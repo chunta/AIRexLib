@@ -11,5 +11,6 @@
 @implementation HeyRex
 - (void)echo {
     NSLog(@"Hey Rex");
+    [[QGSdk getSharedInstance] logEvent:@"12"];
 }
 @end
