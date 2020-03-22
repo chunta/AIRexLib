@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		05EF8B7B242652B70014ADF4 /* HeyRex.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EF8B79242652B70014ADF4 /* HeyRex.m */; };
 		05EF8B7C242652B70014ADF4 /* HeyRex.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8B7A242652B70014ADF4 /* HeyRex.h */; };
+		05EF8BDE24271BA00014ADF4 /* QGInbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BD824271BA00014ADF4 /* QGInbox.h */; };
+		05EF8BDF24271BA00014ADF4 /* QGSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BD924271BA00014ADF4 /* QGSdk.h */; };
+		05EF8BE024271BA00014ADF4 /* AIQP+ReactNative.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BDA24271BA00014ADF4 /* AIQP+ReactNative.h */; };
+		05EF8BE124271BA00014ADF4 /* AIQP.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BDB24271BA00014ADF4 /* AIQP.h */; };
+		05EF8BE224271BA00014ADF4 /* QGWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF8BDC24271BA00014ADF4 /* QGWKWebView.h */; };
+		05EF8BE324271BBB0014ADF4 /* libQGSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EF8BD724271BA00014ADF4 /* libQGSdk.a */; };
 		3C5247099217618B9243E8D56D43D189 /* HeyRexLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46826EFC9F2CFFCA65274373E72E93F1 /* HeyRexLib-dummy.m */; };
 		B0D230AC085648814CA8C9B76A1FDEC7 /* HeyRexLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9461629F50A9E2455C376402E455B4 /* HeyRexLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2A1D194D3AE55D05E258B7EE2FE6220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -17,6 +23,12 @@
 /* Begin PBXFileReference section */
 		05EF8B79242652B70014ADF4 /* HeyRex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeyRex.m; path = HeyRexLib/Classes/HeyRex.m; sourceTree = "<group>"; };
 		05EF8B7A242652B70014ADF4 /* HeyRex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeyRex.h; path = HeyRexLib/Classes/HeyRex.h; sourceTree = "<group>"; };
+		05EF8BD724271BA00014ADF4 /* libQGSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQGSdk.a; path = HeyRexLib/Classes/libQGSdk.a; sourceTree = "<group>"; };
+		05EF8BD824271BA00014ADF4 /* QGInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGInbox.h; path = HeyRexLib/Classes/QGInbox.h; sourceTree = "<group>"; };
+		05EF8BD924271BA00014ADF4 /* QGSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGSdk.h; path = HeyRexLib/Classes/QGSdk.h; sourceTree = "<group>"; };
+		05EF8BDA24271BA00014ADF4 /* AIQP+ReactNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIQP+ReactNative.h"; path = "HeyRexLib/Classes/AIQP+ReactNative.h"; sourceTree = "<group>"; };
+		05EF8BDB24271BA00014ADF4 /* AIQP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIQP.h; path = HeyRexLib/Classes/AIQP.h; sourceTree = "<group>"; };
+		05EF8BDC24271BA00014ADF4 /* QGWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGWKWebView.h; path = HeyRexLib/Classes/QGWKWebView.h; sourceTree = "<group>"; };
 		14D2AF7CF02A2AEEC8504718A34817D6 /* Pods-HeyRexLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HeyRexLib_Tests-dummy.m"; sourceTree = "<group>"; };
 		1D1F3F9F3EEC96F78940F5CF9B7251B6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		239361DCBE70C99A6966FA1ED70E0E60 /* Pods-HeyRexLib_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HeyRexLib_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -46,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EF8BE324271BBB0014ADF4 /* libQGSdk.a in Frameworks */,
 				B2A1D194D3AE55D05E258B7EE2FE6220 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +146,12 @@
 		D19CB5186D3C2F8FD354F099238DD531 /* HeyRexLib */ = {
 			isa = PBXGroup;
 			children = (
+				05EF8BDB24271BA00014ADF4 /* AIQP.h */,
+				05EF8BDA24271BA00014ADF4 /* AIQP+ReactNative.h */,
+				05EF8BD724271BA00014ADF4 /* libQGSdk.a */,
+				05EF8BD824271BA00014ADF4 /* QGInbox.h */,
+				05EF8BD924271BA00014ADF4 /* QGSdk.h */,
+				05EF8BDC24271BA00014ADF4 /* QGWKWebView.h */,
 				05EF8B7A242652B70014ADF4 /* HeyRex.h */,
 				05EF8B79242652B70014ADF4 /* HeyRex.m */,
 				3F378B5054A834C8803D57A7A9F76876 /* Pod */,
@@ -165,8 +184,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EF8BE224271BA00014ADF4 /* QGWKWebView.h in Headers */,
+				05EF8BE024271BA00014ADF4 /* AIQP+ReactNative.h in Headers */,
+				05EF8BE124271BA00014ADF4 /* AIQP.h in Headers */,
 				B0D230AC085648814CA8C9B76A1FDEC7 /* HeyRexLib-umbrella.h in Headers */,
 				05EF8B7C242652B70014ADF4 /* HeyRex.h in Headers */,
+				05EF8BDE24271BA00014ADF4 /* QGInbox.h in Headers */,
+				05EF8BDF24271BA00014ADF4 /* QGSdk.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +283,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "${SRCROOT}/../../HeyRexLib/**";
 				MODULEMAP_FILE = "Target Support Files/HeyRexLib/HeyRexLib.modulemap";
 				PRODUCT_MODULE_NAME = HeyRexLib;
 				PRODUCT_NAME = HeyRexLib;
@@ -413,6 +438,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "${SRCROOT}/../../HeyRexLib/**";
 				MODULEMAP_FILE = "Target Support Files/HeyRexLib/HeyRexLib.modulemap";
 				PRODUCT_MODULE_NAME = HeyRexLib;
 				PRODUCT_NAME = HeyRexLib;

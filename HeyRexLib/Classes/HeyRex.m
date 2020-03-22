@@ -7,7 +7,7 @@
 //
 
 #import "HeyRex.h"
-
+#import "QGSdk.h"
 @implementation HeyRex
 - (void)echo {
     NSLog(@"Hey Rex");
