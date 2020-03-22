@@ -35,7 +35,7 @@ TODO: Add long description of the pod here.
   # s.resource_bundles = {
   #   'HeyRexLib' => ['HeyRexLib/Assets/*.png']
   # }
-
+  s.vendored_libraries = 'HeyRexLib/Classes/*.a'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.static_framework = true
