@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05EF8BD724271BA00014ADF4 /* libQGSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQGSdk.a; path = HeyRexLib/Classes/libQGSdk.a; sourceTree = "<group>"; };
+		05EF8BD724271BA00014ADF4 /* libQGSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQGSdk.a; sourceTree = "<group>"; };
 		05EF8BD824271BA00014ADF4 /* QGInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGInbox.h; path = HeyRexLib/Classes/QGInbox.h; sourceTree = "<group>"; };
 		05EF8BD924271BA00014ADF4 /* QGSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QGSdk.h; path = HeyRexLib/Classes/QGSdk.h; sourceTree = "<group>"; };
 		05EF8BDA24271BA00014ADF4 /* AIQP+ReactNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AIQP+ReactNative.h"; path = "HeyRexLib/Classes/AIQP+ReactNative.h"; sourceTree = "<group>"; };
@@ -142,9 +142,9 @@
 		D19CB5186D3C2F8FD354F099238DD531 /* HeyRexLib */ = {
 			isa = PBXGroup;
 			children = (
+				05EF8BD724271BA00014ADF4 /* libQGSdk.a */,
 				05EF8BDB24271BA00014ADF4 /* AIQP.h */,
 				05EF8BDA24271BA00014ADF4 /* AIQP+ReactNative.h */,
-				05EF8BD724271BA00014ADF4 /* libQGSdk.a */,
 				05EF8BD824271BA00014ADF4 /* QGInbox.h */,
 				05EF8BD924271BA00014ADF4 /* QGSdk.h */,
 				05EF8BDC24271BA00014ADF4 /* QGWKWebView.h */,
@@ -275,7 +275,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "${SRCROOT}/../../HeyRexLib/**";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../HeyRexLib/**";
 				MODULEMAP_FILE = "Target Support Files/HeyRexLib/HeyRexLib.modulemap";
 				PRODUCT_MODULE_NAME = HeyRexLib;
 				PRODUCT_NAME = HeyRexLib;
@@ -430,7 +430,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "${SRCROOT}/../../HeyRexLib/**";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../HeyRexLib/**";
 				MODULEMAP_FILE = "Target Support Files/HeyRexLib/HeyRexLib.modulemap";
 				PRODUCT_MODULE_NAME = HeyRexLib;
 				PRODUCT_NAME = HeyRexLib;
