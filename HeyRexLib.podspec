@@ -31,13 +31,13 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'HeyRexLib/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'HeyRexLib' => ['HeyRexLib/Assets/*.png']
   # }
   s.vendored_libraries = 'HeyRexLib/Classes/*.a'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.static_framework = true
+  s.static_framework = true
   # s.dependency 'AFNetworking', '~> 2.3'
 end
