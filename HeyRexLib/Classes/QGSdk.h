@@ -12,6 +12,12 @@
 #import <UserNotifications/UserNotifications.h>
 #import "QGInbox.h"
 
+typedef NS_ENUM(NSUInteger, QGGDPRSTATE) {
+    QGGDPRSTATE_UNUSED = 0,
+    QGGDPRSTATE_AGREED = 1,
+    QGGDPRSTATE_DISAGREED = 2
+};
+
 NS_ASSUME_NONNULL_BEGIN
 @interface QGSdk : NSObject
 
@@ -42,42 +48,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (QGSdk *) getSharedInstance;
 
 /*!
- @abstract
- Set the app id and profile to setup sdk
- 
- @discussion
- This initialises the sdk with your app id.
- Add this method to you AppDelegate applicaiton:didFinishLaunchingWithOptions:
- You can find it your account on app.qgraph.io in setup.
- 
- @param appId           your QGraph account appId
- @param devProfile      True/YES for Development and False/No for Production
- */
-- (void)onStart:(NSString *)appId setDevProfile:(BOOL)devProfile;
-
-/*!
- @abstract
- Set the app id and profile to setup sdk
- 
- @discussion
- This initialises the sdk with your app id.
- Add this method to you AppDelegate applicaiton:didFinishLaunchingWithOptions:
- You can find it your account on app.qgraph.io in setup.
- 
- @param appId           your QGraph account appId
- @param devProfile      True/YES for Development and False/No for Production
- @param useGDPR         True/Yes to enable GDPR checking
- */
-- (void)onStart:(NSString *)appId setDevProfile:(BOOL)devProfile usesGDPR:(BOOL)useGDPR;
-
-/*!
 @abstract
 Set if agree GDPR
 
 @discussion
 If this function is called (no matter True or Fasle), the GDPR checking will be enabled.
 
-@param status         True/YES to agree GDPR or False/No to disagree GDPR
+@param status   True/YES to agree GDPR or False/No to disagree GDPR
+
+@note the method is not working without setting GDPR YES in the onStart call
 */
 - (void)setGDPRConsent:(BOOL)status;
 
@@ -92,15 +71,29 @@ See if your app use GDRP or not
 
 /*!
 @abstract
-See if your users agree GDRP or not
+See if your users agree GDRP or not or unuse it atll
 
 @discussion
-Return the status of GDRP consensus (agree or disagree) by users.
-
-@note
-If your app doesn't use GDPR, this function will return False/No.
+Return the status of GDRP
+QGGDPRSTATE_UNUSED    - Not used
+QGGDPRSTATE_AGREED    - Used, and users agree
+QGGDPRSTATE_DISAGREED - Used, but users disagree
 */
-- (BOOL)getGDPRConsentStatus;
+- (QGGDPRSTATE)getGDPRState;
+
+/*!
+ @abstract
+ Set the app id and profile to setup sdk
+ 
+ @discussion
+ This initialises the sdk with your app id.
+ Add this method to you AppDelegate applicaiton:didFinishLaunchingWithOptions:
+ You can find it your account on app.qgraph.io in setup.
+ 
+ @param appId           your QGraph account appId
+ @param devProfile      True/YES for Development and False/No for Production
+ */
+- (void)onStart:(NSString *)appId setDevProfile:(BOOL)devProfile __attribute__((deprecated("deprecated! use new methods")));
 
 /*!
  @abstract
