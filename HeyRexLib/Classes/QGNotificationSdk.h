@@ -95,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  */
 - (void)viewDidLoadWithCarousel:(QGCarousel *)carousel;
-- (void)viewDidLoadWithNotificationViewController:(UIViewController *)notificationViewController;
+
 /*!
  @method
  
