@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AIRexLib'
-  s.version          = '0.0.1'
+  s.version          = '0.7.4'
   s.summary          = 'A short description of AIRexLib.'
 
 # This description is used to generate tags and improve search results.
