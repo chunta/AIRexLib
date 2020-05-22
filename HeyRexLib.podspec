@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HeyRexLib'
-  s.version          = '0.7.2'
+  s.version          = '0.7.3'
   s.summary          = 'A short description of HeyRexLib.'
 
 # This description is used to generate tags and improve search results.
@@ -30,12 +30,12 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'HeyRexLib/Classes/**/*'
+  s.source_files = 'HeyHey/Classes/**/*'
 
   # s.resource_bundles = {
   #   'HeyRexLib' => ['HeyRexLib/Assets/*.png']
   # }
-  s.vendored_libraries = 'HeyRexLib/Classes/*.a'
+  s.vendored_libraries = 'HeyHey/Classes/*.a'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'MapKit', 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   s.static_framework = true
