@@ -1,6 +1,0 @@
-use_frameworks!
-target 'HeyRexLib_Tests' do
-  pod 'HeyRexLib', :path => '../'
-  
-  
-end
