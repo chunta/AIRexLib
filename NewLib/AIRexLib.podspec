@@ -1,44 +1,30 @@
-#
-# Be sure to run `pod lib lint HeyRexLib.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
+require 'json'
+
+#package = JSON.parse(File.read(File.join(__dir__, 'version.json')))
 
 Pod::Spec.new do |s|
-  s.name             = 'AIRexLib'
-  s.version          = '0.7.5'
-  s.summary          = 'A short description of AIRexLib.'
+  s.name         = "AIRexLib"
+  s.version      = "0.7.5"
+  s.summary      = "iOS Sdk helps you to track user events in your app and display notifications"
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.homepage     = "https://www.appier.com/en/index.html"
+  s.documentation_url = "https://docs.aiqua.appier.com/docs"
+  s.license      = "MIT"
+  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.author             = { "appier" => "rex.chen@appier.com" }
+  s.platform     = :ios, '11.0'
+  s.source       = { :git => "https://github.com/chunta/HeyRexLib.git", :tag => "0.7.5"}
+  s.default_subspec = "ios-sdk"
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.subspec 'ios-sdk' do |ss|
+    ss.library = 'z'
+    ss.source_files = 'Source/Classes/**/*'
+    #ss.source_files = "QGSdk.h", "AIQP.h", "QGWKWebView.h", "QGInbox.h", "AIQP+ReactNative.h"
+    #ss.vendored_library = "libQGSdk.a"
+    ss.vendored_libraries = 'Source/Classes/*.a'
+    ss.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
+  end
 
-  s.homepage         = 'https://github.com/chunta/HeyRexLib'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'chunta' => 'rex.chen@appier.com' }
-  s.source           = { :git => 'https://github.com/chunta/HeyRexLib.git', :tag => '0.7.5' }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '11.0'
-
-  s.source_files = 'Source/Classes/**/*'
-
-  # s.resource_bundles = {
-  #   'HeyRexLib' => ['HeyRexLib/Assets/*.png']
-  # }
-  s.vendored_libraries = 'Source/Classes/*.a'
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'MapKit', 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
+  s.requires_arc = true
   s.static_framework = true
-  s.library = 'z'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
