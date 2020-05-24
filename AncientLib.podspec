@@ -4,7 +4,7 @@ require 'json'
 
 Pod::Spec.new do |s|
   s.name         = "AncientLib"
-  s.version      = "0.7.7"
+  s.version      = "0.7.6"
   s.summary      = "iOS Sdk helps you to track user events in your app and display notifications"
 
   s.homepage     = "https://www.appier.com/en/index.html"
