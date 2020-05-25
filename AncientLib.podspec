@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
     #ss.source_files = "QGSdk.h", "AIQP.h", "QGWKWebView.h", "QGInbox.h", "AIQP+ReactNative.h"
     #ss.vendored_library = "libQGSdk.a"
     #ss.vendored_libraries = 'NewLib/Classes/*.a'
-    ss.source_files = "NewLib/Classes/**/*.{h, m, swift}"
-    ss.vendored_library = "NewLib/Classes/**/*.a"
+    ss.source_files = "NewLib/Classes/*.{h, m, swift}"
+    ss.vendored_library = "NewLib/Classes/*.a"
     #ss.vendored_library = "libQGSdk.a"
     ss.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   end
