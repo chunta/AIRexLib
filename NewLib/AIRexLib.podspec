@@ -4,7 +4,7 @@ require 'json'
 
 Pod::Spec.new do |s|
   s.name         = "AIRexLib"
-  s.version      = "0.8.0"
+  s.version      = "0.8.1"
   s.summary      = "iOS Sdk helps you to track user events in your app and display notifications"
 
   s.homepage     = "https://www.appier.com/en/index.html"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "appier" => "rex.chen@appier.com" }
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '11.0'
   s.source       = { :git => "https://github.com/chunta/HeyRexLib.git", :tag => "0.8.0"}
   s.default_subspec = "ios-sdk"
 
