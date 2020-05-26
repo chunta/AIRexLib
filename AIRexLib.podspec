@@ -1,6 +1,6 @@
 require 'json'
 
-package = JSON.parse(File.read(File.join(__dir__, '..', 'version.json')))
+package = JSON.parse(File.read(File.join(__dir__, 'version.json')))
 
 Pod::Spec.new do |s|
   s.name         = "AIRexLib"
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.subspec 'ios-sdk' do |ss|
     ss.library = 'z'
     ss.source_files = 'Classes/**/*'
-    ss.vendored_library = "Classes/*.a"
+    ss.vendored_library = "Classes/**/*.a"
     ss.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   end
 
