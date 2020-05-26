@@ -27,8 +27,8 @@ Pod::Spec.new do |s|
     #ss.vendored_library = "libQGSdk.a"
     #ss.vendored_libraries = 'NewLib/Classes/*.a'
     #ss.source_files = "NewLib/Classes/*.{h, m, swift}"
-    ss.source_files = 'Classes/**/*'
-    ss.vendored_library = "Classes/*.a"
+    ss.source_files = 'AncientLib/Classes/**/*'
+    ss.vendored_library = "AncientLib/Classes/*.a"
     ss.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   end
 
