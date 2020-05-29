@@ -4,13 +4,19 @@
 //
 //  Created by Shiv
 //  Copyright (c) 2019 APPIER INC. All rights reserved.
-//  SDK VERSION ---> 6.0.0
+//  SDK VERSION ---> 5.2.2
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "QGInbox.h"
+
+typedef NS_ENUM(NSUInteger, QGGDPRSTATE) {
+    QGGDPRSTATE_UNUSED = 0,
+    QGGDPRSTATE_AGREED = 1,
+    QGGDPRSTATE_DISAGREED = 2
+};
 
 NS_ASSUME_NONNULL_BEGIN
 @interface QGSdk : NSObject
@@ -42,6 +48,40 @@ NS_ASSUME_NONNULL_BEGIN
 + (QGSdk *) getSharedInstance;
 
 /*!
+@abstract
+Set if agree GDPR
+
+@discussion
+If this function is called (no matter True or Fasle), the GDPR checking will be enabled.
+
+@param status   True/YES to agree GDPR or False/No to disagree GDPR
+
+@note the method is not working without setting GDPR YES in the onStart call
+*/
+- (void)setGDPRConsent:(BOOL)status;
+
+/*!
+@abstract
+See if your app adopt GDRP or not
+
+@discussion
+See if your app use GDRP or not
+*/
+- (BOOL)isGDPRUsed;
+
+/*!
+@abstract
+See if your users agree GDRP or not or unuse it atll
+
+@discussion
+Return the status of GDRP
+QGGDPRSTATE_UNUSED    - Not used
+QGGDPRSTATE_AGREED    - Used, and users agree
+QGGDPRSTATE_DISAGREED - Used, but users disagree
+*/
+- (QGGDPRSTATE)getGDPRState;
+
+/*!
  @abstract
  Set the app id and profile to setup sdk
  
@@ -51,9 +91,9 @@ NS_ASSUME_NONNULL_BEGIN
  You can find it your account on app.qgraph.io in setup.
  
  @param appId           your QGraph account appId
- @param devProfile      True/Yes for Development and False/No for Production
+ @param devProfile      True/YES for Development and False/No for Production
  */
-- (void)onStart:(NSString *)appId setDevProfile:(BOOL)devProfile;
+- (void)onStart:(NSString *)appId setDevProfile:(BOOL)devProfile __attribute__((deprecated("deprecated! use new methods")));
 
 /*!
  @abstract
@@ -69,11 +109,31 @@ NS_ASSUME_NONNULL_BEGIN
  @param appId           your QGraph account appId
  @param appGroup        APP-GROUP used for the service & content extension and app target
  @param devProfile      True/Yes for Development and False/No for Production
- 
+
  @note Pass appGroup as 'nil' if not using rich push (Carousel/Slider Push)
  @note However this appGroup also helps track ctr for the push notification using service extension.
  */
 - (void)onStart:(NSString *)appId withAppGroup:(nullable NSString *)appGroup setDevProfile:(BOOL)devProfile;
+
+/*!
+ @abstract
+ Set the app id, app group and profile to setup sdk
+ 
+ @discussion
+ Same as 'onStart:setDevProfile' with App Group options.
+ Use this onStart method if you wish to add content & service extension of QGraph.
+ App Group will help to share data between app target and extensions.
+ App Group is 'Required' to log events from extension and also to track
+ certain events from the rich push notification.
+ 
+ @param appId           your QGraph account appId
+ @param appGroup        APP-GROUP used for the service & content extension and app target
+ @param devProfile      True/Yes for Development and False/No for Production
+ @param useGDPR         True/Yes for GDPR consent
+ @note Pass appGroup as 'nil' if not using rich push (Carousel/Slider Push)
+ @note However this appGroup also helps track ctr for the push notification using service extension.
+ */
+- (void)onStart:(NSString *)appId withAppGroup:(nullable NSString *)appGroup setDevProfile:(BOOL)devProfile usesGDPR:(BOOL)useGDPR;
 
 /*!
  @method
