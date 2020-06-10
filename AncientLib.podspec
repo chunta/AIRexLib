@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   #s.license      = "MIT"
   s.license    = { :type => "MIT", :file => "Classes/LICENSE" }
   s.author       = { "appier" => "rex.chen@appier.com" }
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '10.0'
   s.source       = { :git => "https://github.com/chunta/HeyRexLib.git", :tag => "v#{s.version}"}
   s.default_subspec = "ios-sdk"
 
