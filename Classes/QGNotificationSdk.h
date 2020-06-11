@@ -143,7 +143,7 @@ NS_ASSUME_NONNULL_BEGIN
  Returns number of items to be shown in the carosuel based on the
  number of attachments in the notification payload.
  
- Before using this method make to add <b>iCarouselDelegate</b> in your
+ Before using this method make to add <b>QGCarouselDelegate</b> in your
  NotificationViewController class.
  
  @code
@@ -162,7 +162,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion
  Creates or reuses a view to be shown at the index of the carousel.
  
- Before using this method, make sure to add <b>iCarouselDataSource</b> in
+ Before using this method, make sure to add <b>QGCarouselDataSource</b> in
  your NotificationViewController class.
  
  @code
@@ -176,11 +176,11 @@ NS_ASSUME_NONNULL_BEGIN
  @method
  
  @abstract
- Returns value for iCarouselOption as per the carousel type.
+ Returns value for QGCarouselOption as per the carousel type.
  
  @discussion
  Calculates and returns the value for the desired layout of the carousel type.
- May return default value for some iCarouselOption.
+ May return default value for some QGCarouselOption.
  
  @note
  <b>Do not</b> alter these values for options or carousel layout may disallign
