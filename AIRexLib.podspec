@@ -18,8 +18,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'ios-sdk' do |ss|
     ss.library = 'z'
-    ss.source_files = 'Classes/**/*'
-    ss.vendored_library = "Classes/*.a"
+    #ss.source_files = 'Classes/**/*'
+    #ss.vendored_library = "Classes/*.a"
+    ss.source = { :http => 'https://dl.dropboxusercontent.com/s/czdltow7p34wwbr/Appier.framework.zip' }
+    ss.ios.vendored_frameworks = 'Appier.framework'
     ss.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   end
 
