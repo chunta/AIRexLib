@@ -14,13 +14,13 @@ Pod::Spec.new do |s|
   s.author       = { "appier" => "rex.chen@appier.com" }
   s.platform     = :ios, '8.0'
   s.source       = { :git => "https://github.com/chunta/HeyRexLib.git", :tag => "v#{s.version}"}
+  #s.source = { :http => 'https://dl.dropboxusercontent.com/s/czdltow7p34wwbr/Appier.framework.zip' }
   s.default_subspec = "ios-sdk"
 
   s.subspec 'ios-sdk' do |ss|
     ss.library = 'z'
     #ss.source_files = 'Classes/**/*'
     #ss.vendored_library = "Classes/*.a"
-    ss.source = { :http => 'https://dl.dropboxusercontent.com/s/czdltow7p34wwbr/Appier.framework.zip' }
     ss.ios.vendored_frameworks = 'Appier.framework'
     ss.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   end
