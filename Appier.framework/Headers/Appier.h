@@ -22,10 +22,6 @@ FOUNDATION_EXPORT const unsigned char AppierVersionString[];
 #import <Appier/QGNotificationSdk.h>
 #import <Appier/QGNotificationStorage.h>
 
-//Extension
-#import <Appier/QGNotificationService.h>
-#import <Appier/QGNotificationContentViewController.h>
-
 #import <Appier/AIDManager.h>
 #import <Appier/AIDPageType.h>
 #import <Appier/AIDConversionInfo.h>
