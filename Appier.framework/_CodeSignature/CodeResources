@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/Appier.h</key>
 		<data>
-		xKE3ewdNgaLpu4OfEloNzZW37NI=
+		4MhiN1edVqMwbrdXX4xbE43s5lw=
 		</data>
 		<key>Headers/QGCarousel.h</key>
 		<data>
@@ -36,17 +36,21 @@
 		<data>
 		R45VwZcejV8Ga/A5+K03oggRZME=
 		</data>
+		<key>Headers/QGNotificationContentViewController.h</key>
+		<data>
+		S/ErMHNFEu9l+0uuwlwntBPxxAM=
+		</data>
 		<key>Headers/QGNotificationSdk.h</key>
 		<data>
 		VAs2KVMUswUL0P/IOsNdogYlCNk=
 		</data>
+		<key>Headers/QGNotificationService.h</key>
+		<data>
+		LiOBNQsJMprsmSIocOmkEbRtLCY=
+		</data>
 		<key>Headers/QGNotificationStorage.h</key>
 		<data>
 		kWgWs4i7Pr+Ysv9Du3C3UFNN+SM=
-		</data>
-		<key>Headers/QGNotificationViewController.h</key>
-		<data>
-		lRVwTjhWStt/E+G2zI/BrIDyeY4=
 		</data>
 		<key>Headers/QGSdk.h</key>
 		<data>
@@ -186,11 +190,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xKE3ewdNgaLpu4OfEloNzZW37NI=
+			4MhiN1edVqMwbrdXX4xbE43s5lw=
 			</data>
 			<key>hash2</key>
 			<data>
-			OzLltuZXg1QuNgWXUrxAeoUmOjAMn1nu9cvsORmDwew=
+			k7X/gM5VQGG4/doxlC/nuMSiVN+ziwoLqaOEblm6YLg=
 			</data>
 		</dict>
 		<key>Headers/QGCarousel.h</key>
@@ -215,6 +219,17 @@
 			2nnooQS0+BitktKGQ6IRBsTgZQi79UNPovJ5fQSd81M=
 			</data>
 		</dict>
+		<key>Headers/QGNotificationContentViewController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			S/ErMHNFEu9l+0uuwlwntBPxxAM=
+			</data>
+			<key>hash2</key>
+			<data>
+			yY60+PLbhUpoWP5z/kBmHfR+P/W3+dCUGX7hOVvJoqs=
+			</data>
+		</dict>
 		<key>Headers/QGNotificationSdk.h</key>
 		<dict>
 			<key>hash</key>
@@ -226,6 +241,17 @@
 			vJ7RzuP/t53Bji6kyRLcLr4Gmw2vcpVQw69nJvmI/TA=
 			</data>
 		</dict>
+		<key>Headers/QGNotificationService.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LiOBNQsJMprsmSIocOmkEbRtLCY=
+			</data>
+			<key>hash2</key>
+			<data>
+			4C800OgbtJMT2mYndg2ctp7zotTkTRSKmP3Lb0sJ0WA=
+			</data>
+		</dict>
 		<key>Headers/QGNotificationStorage.h</key>
 		<dict>
 			<key>hash</key>
@@ -235,17 +261,6 @@
 			<key>hash2</key>
 			<data>
 			XD5ZWe6U1IqpD++aCXYdV3Qezx/6TCTiqwIYinG5J6s=
-			</data>
-		</dict>
-		<key>Headers/QGNotificationViewController.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lRVwTjhWStt/E+G2zI/BrIDyeY4=
-			</data>
-			<key>hash2</key>
-			<data>
-			qWfKRq1hqQpIi3bqLqufS2aIsXxE6s8fjZmEPkL6tX4=
 			</data>
 		</dict>
 		<key>Headers/QGSdk.h</key>
