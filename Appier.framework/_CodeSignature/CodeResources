@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/Appier.h</key>
 		<data>
-		xbSuiT/TT3oRIhOQ5M/wCecUMbU=
+		xKE3ewdNgaLpu4OfEloNzZW37NI=
 		</data>
 		<key>Headers/QGCarousel.h</key>
 		<data>
@@ -43,6 +43,10 @@
 		<key>Headers/QGNotificationStorage.h</key>
 		<data>
 		kWgWs4i7Pr+Ysv9Du3C3UFNN+SM=
+		</data>
+		<key>Headers/QGNotificationViewController.h</key>
+		<data>
+		lRVwTjhWStt/E+G2zI/BrIDyeY4=
 		</data>
 		<key>Headers/QGSdk.h</key>
 		<data>
@@ -182,11 +186,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xbSuiT/TT3oRIhOQ5M/wCecUMbU=
+			xKE3ewdNgaLpu4OfEloNzZW37NI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Lwotogljm+3ieTnYbI5rrs+mU7r4LhL1pWJz7u74WUM=
+			OzLltuZXg1QuNgWXUrxAeoUmOjAMn1nu9cvsORmDwew=
 			</data>
 		</dict>
 		<key>Headers/QGCarousel.h</key>
@@ -231,6 +235,17 @@
 			<key>hash2</key>
 			<data>
 			XD5ZWe6U1IqpD++aCXYdV3Qezx/6TCTiqwIYinG5J6s=
+			</data>
+		</dict>
+		<key>Headers/QGNotificationViewController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lRVwTjhWStt/E+G2zI/BrIDyeY4=
+			</data>
+			<key>hash2</key>
+			<data>
+			qWfKRq1hqQpIi3bqLqufS2aIsXxE6s8fjZmEPkL6tX4=
 			</data>
 		</dict>
 		<key>Headers/QGSdk.h</key>
