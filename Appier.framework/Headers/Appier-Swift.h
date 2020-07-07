@@ -502,7 +502,7 @@ SWIFT_PROTOCOL("_TtP6Appier18SocketEngineClient_")
 @end
 
 /// Represents the type of engine.io packet types.
-typedef SWIFT_ENUM(NSInteger, SocketEnginePacketType, closed) {
+typedef SWIFT_ENUM(NSInteger, SocketEnginePacketType, open) {
 /// Open message.
   SocketEnginePacketTypeOpen = 0,
 /// Close message.
@@ -599,7 +599,7 @@ SWIFT_CLASS("_TtC6Appier14SocketIOClient")
 @end
 
 /// Represents the state of the client.
-typedef SWIFT_ENUM(NSInteger, SocketIOClientStatus, closed) {
+typedef SWIFT_ENUM(NSInteger, SocketIOClientStatus, open) {
 /// The client has never been connected. Or the client has been reset.
   SocketIOClientStatusNotConnected = 0,
 /// The client was once connected, but not anymore.
@@ -1128,7 +1128,7 @@ SWIFT_PROTOCOL("_TtP6Appier18SocketEngineClient_")
 @end
 
 /// Represents the type of engine.io packet types.
-typedef SWIFT_ENUM(NSInteger, SocketEnginePacketType, closed) {
+typedef SWIFT_ENUM(NSInteger, SocketEnginePacketType, open) {
 /// Open message.
   SocketEnginePacketTypeOpen = 0,
 /// Close message.
@@ -1225,7 +1225,7 @@ SWIFT_CLASS("_TtC6Appier14SocketIOClient")
 @end
 
 /// Represents the state of the client.
-typedef SWIFT_ENUM(NSInteger, SocketIOClientStatus, closed) {
+typedef SWIFT_ENUM(NSInteger, SocketIOClientStatus, open) {
 /// The client has never been connected. Or the client has been reset.
   SocketIOClientStatusNotConnected = 0,
 /// The client was once connected, but not anymore.
