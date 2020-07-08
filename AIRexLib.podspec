@@ -26,5 +26,5 @@ Pod::Spec.new do |s|
   end
 
   s.requires_arc = true
-  s.static_framework = true
+  #s.static_framework = true
 end
