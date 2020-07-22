@@ -59,7 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param request         UNNotificationRequest received in the notification
  
  */
-- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent *))contentHandler;
+//- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent *))contentHandler;
+- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent *))contentHandler withByPassHandler:(void (^)(void))byPassHandler;
 
 /*!
  @method
