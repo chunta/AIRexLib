@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface QGNotificationService : UNNotificationServiceExtension
-- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler withByPassHandler:(void (^)(void))byPassHandler API_AVAILABLE(ios(10.0));
+- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler
+                    withByPassHandler:(nullable void (^)(void))byPassHandler API_AVAILABLE(ios(10.0));
 @end
 
 NS_ASSUME_NONNULL_END
