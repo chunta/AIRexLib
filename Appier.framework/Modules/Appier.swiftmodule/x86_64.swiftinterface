@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 effective-4.1.50 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-compiler-version: Apple Swift version 5.1.3 effective-4.1.50 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
 // swift-module-flags: -target x86_64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name Appier
 @_exported import Appier
 import CoreFoundation
@@ -140,65 +140,65 @@ extension SocketLogger {
   @objc final public let engineQueue: Dispatch.DispatchQueue
   @objc final public var connectParams: [Swift.String : Any]? {
     @objc get
-    @objc set(value)
+    @objc set(newValue)
   }
   final public var postWait: [Swift.String]
   final public var waitingForPoll: Swift.Bool
   final public var waitingForPost: Swift.Bool
   @objc final public var closed: Swift.Bool {
     get
-  }
+    }
   @objc final public var connected: Swift.Bool {
     get
-  }
+    }
   @objc final public var cookies: [Foundation.HTTPCookie]? {
     get
-  }
+    }
   @objc final public var doubleEncodeUTF8: Swift.Bool {
     get
-  }
+    }
   @objc final public var extraHeaders: [Swift.String : Swift.String]? {
     get
-  }
+    }
   @objc final public var fastUpgrade: Swift.Bool {
     get
-  }
+    }
   @objc final public var forcePolling: Swift.Bool {
     get
-  }
+    }
   @objc final public var forceWebsockets: Swift.Bool {
     get
-  }
+    }
   final public var invalidated: Swift.Bool {
     get
-  }
+    }
   @objc final public var polling: Swift.Bool {
     get
-  }
+    }
   @objc final public var probing: Swift.Bool {
     get
-  }
+    }
   final public var session: Foundation.URLSession? {
     get
-  }
+    }
   @objc final public var sid: Swift.String {
     get
-  }
+    }
   @objc final public var socketPath: Swift.String {
     get
-  }
+    }
   @objc final public var urlPolling: Foundation.URL {
     get
-  }
+    }
   @objc final public var urlWebSocket: Foundation.URL {
     get
-  }
+    }
   @objc final public var websocket: Swift.Bool {
     get
-  }
+    }
   @objc final public var ws: Appier.WebSocket? {
     get
-  }
+    }
   @objc weak final public var client: Appier.SocketEngineClient?
   public init(client: Appier.SocketEngineClient, url: Foundation.URL, config: Appier.SocketIOClientConfiguration)
   @objc public convenience init(client: Appier.SocketEngineClient, url: Foundation.URL, options: Foundation.NSDictionary?)
@@ -226,25 +226,25 @@ public enum SocketAckStatus : Swift.String {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers final public class SocketAnyEvent : ObjectiveC.NSObject {
+@objc final public class SocketAnyEvent : ObjectiveC.NSObject {
   final public let event: Swift.String
   final public let items: [Any]?
   @objc override final public var description: Swift.String {
     @objc get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers final public class SocketAckEmitter : ObjectiveC.NSObject {
+@objc final public class SocketAckEmitter : ObjectiveC.NSObject {
   final public var expected: Swift.Bool {
     get
   }
   final public func with(_ items: Appier.SocketData...)
   final public func with(_ items: [Any])
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc final public class OnAckCallback : ObjectiveC.NSObject {
+@objc final public class OnAckCallback : ObjectiveC.NSObject {
   @objc deinit
   @objc final public func timingOut(after seconds: Swift.Int, callback: @escaping Appier.AckCallback)
   @objc override dynamic public init()
@@ -255,8 +255,8 @@ public protocol SSLTrustValidator {
 @objc open class SSLCert : ObjectiveC.NSObject {
   public init(data: Foundation.Data)
   public init(key: Security.SecKey)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 open class SSLSecurity : Appier.SSLTrustValidator {
   public var validatedDN: Swift.Bool
@@ -269,7 +269,7 @@ open class SSLSecurity : Appier.SSLTrustValidator {
   final public let socketURL: Foundation.URL
   public var engine: Appier.SocketEngineSpec? {
     get
-  }
+    }
   public var status: Appier.SocketIOClientStatus {
     get
   }
@@ -401,7 +401,7 @@ public protocol WebSocketPongDelegate : AnyObject {
   @objc deinit
   @objc override dynamic public init()
 }
-@objc @_inheritsConvenienceInitializers open class SocketClientManager : ObjectiveC.NSObject {
+@objc open class SocketClientManager : ObjectiveC.NSObject {
   public static var sharedManager: Appier.SocketClientManager
   open subscript(string: Swift.String) -> Appier.SocketIOClient? {
     get
@@ -413,8 +413,8 @@ public protocol WebSocketPongDelegate : AnyObject {
   @discardableResult
   open func removeSocket(_ socket: Appier.SocketIOClient) -> Appier.SocketIOClient?
   open func removeSockets()
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public protocol SocketData {
   func socketRepresentation() throws -> Appier.SocketData
