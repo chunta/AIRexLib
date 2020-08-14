@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.source       = { :git => "https://github.com/chunta/HeyRexLib.git", :tag => "v#{s.version}"}
   #s.source = { :http => 'https://dl.dropboxusercontent.com/s/czdltow7p34wwbr/Appier.framework.zip' }
-  s.default_subspec = "ios-sdk"
+  #s.default_subspec = "ios-sdk"
 
   #s.subspec 'ios-sdk' do |ss|
   s.library = 'z'
