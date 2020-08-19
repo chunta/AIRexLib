@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/chunta/AIRexLib.git", :tag => "v#{s.version}"}
   s.library = 'z'
   s.ios.vendored_frameworks = 'Appier.framework'
-  s.static_framework = true
+  #s.static_framework = true
   s.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   #end
 
