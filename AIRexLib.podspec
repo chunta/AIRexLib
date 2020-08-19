@@ -13,17 +13,11 @@ Pod::Spec.new do |s|
   s.license    = { :type => "MIT", :file => "Classes/LICENSE" }
   s.author       = { "appier" => "rex.chen@appier.com" }
   s.platform     = :ios, '8.0'
-  s.source       = { :git => "https://github.com/chunta/HeyRexLib.git", :tag => "v#{s.version}"}
-  #s.source = { :http => 'https://dl.dropboxusercontent.com/s/czdltow7p34wwbr/Appier.framework.zip' }
-  #s.default_subspec = "ios-sdk"
-
-  #s.subspec 'ios-sdk' do |ss|
+  s.source       = { :git => "https://github.com/chunta/AIRexLib.git", :tag => "v#{s.version}"}
   s.library = 'z'
-
   s.ios.vendored_frameworks = 'Appier.framework'
   s.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   #end
 
   s.requires_arc = true
-  #s.static_framework = true
 end
