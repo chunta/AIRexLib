@@ -9,13 +9,14 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://www.appier.com/en/index.html"
   s.documentation_url = "https://docs.aiqua.appier.com/docs"
-  #s.license      = "MIT"
-  s.license    = { :type => "MIT", :file => "Classes/LICENSE" }
+  s.license      = "MIT"
+  #s.license    = { :type => "MIT", :file => "Classes/LICENSE" }
   s.author       = { "appier" => "rex.chen@appier.com" }
   s.platform     = :ios, '8.0'
   s.source       = { :git => "https://github.com/chunta/AIRexLib.git", :tag => "v#{s.version}"}
   s.library = 'z'
   s.ios.vendored_frameworks = 'Appier.framework'
+  s.static_framework = true
   s.frameworks = 'AdSupport', 'CoreTelephony', 'SystemConfiguration', 'CoreLocation', 'ImageIO', 'MobileCoreServices'
   #end
 
