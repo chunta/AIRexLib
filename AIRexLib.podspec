@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.name         = "AIRexLib"
   s.version      = package['version']
   s.summary      = "iOS Sdk helps you to track user events in your app and display notifications"
-
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   s.homepage     = "https://www.appier.com/en/index.html"
   s.documentation_url = "https://docs.aiqua.appier.com/docs"
   s.license    = { :type => "MIT", :file => "LICENSE" }
