@@ -2,7 +2,7 @@
 //  QGNotificationSdk.h
 //  QGNotificationSdk
 //
-//  Created by Shiv on 05/08/16.
+//  Created by Appier on 05/08/16.
 //  Copyright © 2019 APPIER INC. All rights reserved.
 //
 //  NOTE:
@@ -11,12 +11,12 @@
 //
 //  Do not add QGSdk to these Targets. For logging any event, use the api in QGNotificationSdk.
 //  QGSdk should not used any extension. Should be used in Main Project Target only.
-//  SDK_VERSION --- 5.3.0
+//  SDK_VERSION --- 5.4.0
 
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
 #import <UserNotificationsUI/UserNotificationsUI.h>
-#import "QGCarousel.h"
+#import "iCarousel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -94,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
  @endcode
  
  */
-- (void)viewDidLoadWithCarousel:(QGCarousel *)carousel;
+- (void)viewDidLoadWithCarousel:(iCarousel *)carousel;
 
 /*!
  @method
@@ -151,7 +151,7 @@ NS_ASSUME_NONNULL_BEGIN
  @endcode
  
  */
-- (NSInteger)numberOfItemsInCarousel:(QGCarousel *)carousel;
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel;
 
 /*!
  @method
@@ -170,7 +170,7 @@ NS_ASSUME_NONNULL_BEGIN
  @endcode
  
  */
-- (UIView *)carousel:(QGCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
 
 /*!
  @method
@@ -190,7 +190,7 @@ NS_ASSUME_NONNULL_BEGIN
  @endcode
  
  */
-- (CGFloat)carousel:(QGCarousel *)carousel valueForOption:(QGCarouselOption)option withDefault:(CGFloat)value;
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value;
 
 /*!
  @method
@@ -205,7 +205,7 @@ NS_ASSUME_NONNULL_BEGIN
  [[QGNotificationSdk sharedInstanceWithAppGroup:APP_GROUP] carouselItemWidth:carousel]
  @endcode
  */
-- (CGFloat)carouselItemWidth:(QGCarousel *)carousel;
+- (CGFloat)carouselItemWidth:(iCarousel *)carousel;
 
 /*!
  @method
@@ -219,7 +219,7 @@ NS_ASSUME_NONNULL_BEGIN
  @code
  [[QGNotificationSdk sharedInstanceWithAppGroup:APP_GROUP] carousel:carousel didSelectItemAtIndex:index withExtensionContext:self.extensionContext];
  */
-- (void)carousel:(QGCarousel *)carousel didSelectItemAtIndex:(NSInteger)index withExtensionContext:(NSExtensionContext *)context API_AVAILABLE(ios(12.0));
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index withExtensionContext:(NSExtensionContext *)context API_AVAILABLE(ios(12.0));
 
 /*!
  @method
@@ -234,7 +234,7 @@ NS_ASSUME_NONNULL_BEGIN
  [[QGNotificationSdk sharedInstanceWithAppGroup:APP_GROUP] carouselDidEndDragging:carousel willDecelerate:decelerate];
  
  */
-- (void)carouselDidEndDragging:(QGCarousel *)carousel willDecelerate:(BOOL)decelerate API_AVAILABLE(ios(12.0));
+- (void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate API_AVAILABLE(ios(12.0));
 
 /*!
  @method
