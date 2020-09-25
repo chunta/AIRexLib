@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.source       = { :git => "https://github.com/chunta/AIRexLib.git", :tag => package['version']}
   #s.library = 'z'
-  s.ios.vendored_frameworks = ['Appier.framework']
+  s.ios.vendored_frameworks = ['Appier.xcframework']
   #s.static_framework = true
   s.swift_version = '4.0'
   #s.prefix_header_file = false
