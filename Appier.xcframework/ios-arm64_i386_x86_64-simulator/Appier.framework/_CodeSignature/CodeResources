@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/QGNotificationSdk.h</key>
 		<data>
-		6UvMyQypK/90ZxkpEmow7SFA7DY=
+		zE0gq+Z1Ybz/sudi5ELuNvnZr9Y=
 		</data>
 		<key>Headers/QGNotificationService.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/QGSdk.h</key>
 		<data>
-		n40bAxz+dU0uPfIYF6lIudoTKwk=
+		YD7XRXiS32GQ4azBVd35Tl2rBGg=
 		</data>
 		<key>Headers/QGWKWebView.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OAoYV1YJZ9wSZueUsyiVSO98lSU=
+		JSoTvdUp/By6pGFO9KZ9fjCwOD0=
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>version.txt</key>
 		<data>
-		T2zfYWkTJ1SO7+bVlnuleoNye3I=
+		i1Zro+fSgsOAmSpTFrGZw3RBq3I=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -250,11 +250,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6UvMyQypK/90ZxkpEmow7SFA7DY=
+			zE0gq+Z1Ybz/sudi5ELuNvnZr9Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			cflthuswbWNhvjflXVc74ZiJ3LKvnJEUEsLkO9rfWBo=
+			cnuJC7sqO1DVk+814/fk2MLa3GpvxtL1FS4fwKdIZxo=
 			</data>
 		</dict>
 		<key>Headers/QGNotificationService.h</key>
@@ -272,11 +272,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			n40bAxz+dU0uPfIYF6lIudoTKwk=
+			YD7XRXiS32GQ4azBVd35Tl2rBGg=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kzN36/m8wisYJ/pVGcg19G/y7iqyVnXWMLsURz7cXE=
+			JhYfFj/Bqwx5NFIoJIx8vWhCMx9X3ktaJTxKLpE36Qg=
 			</data>
 		</dict>
 		<key>Headers/QGWKWebView.h</key>
@@ -514,11 +514,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T2zfYWkTJ1SO7+bVlnuleoNye3I=
+			i1Zro+fSgsOAmSpTFrGZw3RBq3I=
 			</data>
 			<key>hash2</key>
 			<data>
-			AB5pX6U2McfAjQFrR6uv52Nj32u2YrirgGP24UG6j2s=
+			jn/5/XYk7PZkc8Q50JlS3Bp7rxIAI2ZurNazcfDBHWE=
 			</data>
 		</dict>
 	</dict>
