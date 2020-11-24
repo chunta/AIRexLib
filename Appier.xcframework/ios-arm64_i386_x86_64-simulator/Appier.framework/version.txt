@@ -1,4 +1,4 @@
-AppierFramework:v7.3.0
-aiqua-ios-sdk:v7.3.0
+AppierFramework:v7.1.0
+aiqua-ios-sdk:Rex/MT-448/AvoidDuplicateGCMIdAndDifferentUserId
 aiqua-ios-notification-sdk:v7.3.0
 aideal-ios-sdk:v1.0.0
