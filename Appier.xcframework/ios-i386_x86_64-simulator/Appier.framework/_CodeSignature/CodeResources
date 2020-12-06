@@ -6,7 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		KkM4sID//Cc8UiTFyO+EEKuS98Q=
+		iMDLaLh7dMwMvkzvceyPQImynXU=
+		</data>
+		<key>Headers/AIDPage.h</key>
+		<data>
+		hX4JU5XnJw7FaoCkh/L82LOPtNM=
 		</data>
 		<key>Headers/AIQP+ReactNative.h</key>
 		<data>
@@ -23,6 +27,10 @@
 		<key>Headers/Appier.h</key>
 		<data>
 		Kv5dU5unNXFK/MeWaPEW/LeHEbU=
+		</data>
+		<key>Headers/Legacy.h</key>
+		<data>
+		fvBi/2fdy39PvP3mhf2DOgOV2hA=
 		</data>
 		<key>Headers/QGInbox.h</key>
 		<data>
@@ -131,11 +139,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KkM4sID//Cc8UiTFyO+EEKuS98Q=
+			iMDLaLh7dMwMvkzvceyPQImynXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			NJ0+X2I9YfWzbTfrqg7zxzuNNxgN/ESps66xPpxEDmo=
+			Ec39iVkQpi/Qho183HpKY/jJbo39+ikKyCFz6RaJHOk=
+			</data>
+		</dict>
+		<key>Headers/AIDPage.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hX4JU5XnJw7FaoCkh/L82LOPtNM=
+			</data>
+			<key>hash2</key>
+			<data>
+			O1eHGHFouo1rYPGCoUa/dYw/ot2vxrvOO0B3HNkNc04=
 			</data>
 		</dict>
 		<key>Headers/AIQP+ReactNative.h</key>
@@ -180,6 +199,17 @@
 			<key>hash2</key>
 			<data>
 			SIMWEAQtb97X2mvc2owlIE/ZtKw1B1C2C1jsl4oBZE0=
+			</data>
+		</dict>
+		<key>Headers/Legacy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fvBi/2fdy39PvP3mhf2DOgOV2hA=
+			</data>
+			<key>hash2</key>
+			<data>
+			IiTIdtTPu+mx/W29LzMCgY4v+sj6XMKnieR0pVOYNHE=
 			</data>
 		</dict>
 		<key>Headers/QGInbox.h</key>
