@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		y77bgsKRcXydEWw8fn6AOrfDPHk=
+		aVZUOyIL35WeFPQ5RF+KUy0OS0Y=
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hC5wxICuBLDDeqXT4S1acB1zTmY=
+		SryZXFSmp6mhZiO/pz/Fb9PwI8M=
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		y77bgsKRcXydEWw8fn6AOrfDPHk=
+		aVZUOyIL35WeFPQ5RF+KUy0OS0Y=
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64.swiftinterface</key>
 		<data>
@@ -86,11 +86,11 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		hC5wxICuBLDDeqXT4S1acB1zTmY=
+		SryZXFSmp6mhZiO/pz/Fb9PwI8M=
 		</data>
 		<key>Modules/Appier.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		UqwCOCP/PZ1E/A6PqCAJCKhVEmI=
+		nYNfkOExhhHU6rNWAooFM99o1Xk=
 		</data>
 		<key>Modules/Appier.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -98,11 +98,11 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		n2xn9ipSH4qKQJyyO5IuznkUVX4=
+		e1QCoKySQpnDfYvCERBFN6RauL0=
 		</data>
 		<key>Modules/Appier.swiftmodule/i386.swiftdoc</key>
 		<data>
-		UqwCOCP/PZ1E/A6PqCAJCKhVEmI=
+		nYNfkOExhhHU6rNWAooFM99o1Xk=
 		</data>
 		<key>Modules/Appier.swiftmodule/i386.swiftinterface</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/i386.swiftmodule</key>
 		<data>
-		n2xn9ipSH4qKQJyyO5IuznkUVX4=
+		e1QCoKySQpnDfYvCERBFN6RauL0=
 		</data>
 		<key>Modules/Appier.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PjkGA8mXdDQE/XNOMII0xniE9gk=
+		JHizGCRdVwtw3yDnd0fa9de1H+0=
 		</data>
 		<key>Modules/Appier.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -122,11 +122,11 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		YGXgM5hgrdwFuoVjCnkJ8/64gyw=
+		4Ped6RHvQ4/2FMJYn2r84YopZrI=
 		</data>
 		<key>Modules/Appier.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		PjkGA8mXdDQE/XNOMII0xniE9gk=
+		JHizGCRdVwtw3yDnd0fa9de1H+0=
 		</data>
 		<key>Modules/Appier.swiftmodule/x86_64.swiftinterface</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Modules/Appier.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		YGXgM5hgrdwFuoVjCnkJ8/64gyw=
+		4Ped6RHvQ4/2FMJYn2r84YopZrI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -317,11 +317,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			y77bgsKRcXydEWw8fn6AOrfDPHk=
+			aVZUOyIL35WeFPQ5RF+KUy0OS0Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			KYFmmFzJp6CATRz4+uVlm+/HHi830UqW7siymYbU2UU=
+			fqqkaVAXaTTvb0ZV4YMe3n3o93rFIpRj0wJAP3h8dxc=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -339,22 +339,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hC5wxICuBLDDeqXT4S1acB1zTmY=
+			SryZXFSmp6mhZiO/pz/Fb9PwI8M=
 			</data>
 			<key>hash2</key>
 			<data>
-			WnjwctR8zep/ZtOZM0A0FqwvigSYWmSPScL4mqEpCD8=
+			E4+L028QlP0zb/x3MrAdEyz6AfG4xgA6362sJi9bu+U=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y77bgsKRcXydEWw8fn6AOrfDPHk=
+			aVZUOyIL35WeFPQ5RF+KUy0OS0Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			KYFmmFzJp6CATRz4+uVlm+/HHi830UqW7siymYbU2UU=
+			fqqkaVAXaTTvb0ZV4YMe3n3o93rFIpRj0wJAP3h8dxc=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/arm64.swiftinterface</key>
@@ -372,22 +372,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hC5wxICuBLDDeqXT4S1acB1zTmY=
+			SryZXFSmp6mhZiO/pz/Fb9PwI8M=
 			</data>
 			<key>hash2</key>
 			<data>
-			WnjwctR8zep/ZtOZM0A0FqwvigSYWmSPScL4mqEpCD8=
+			E4+L028QlP0zb/x3MrAdEyz6AfG4xgA6362sJi9bu+U=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UqwCOCP/PZ1E/A6PqCAJCKhVEmI=
+			nYNfkOExhhHU6rNWAooFM99o1Xk=
 			</data>
 			<key>hash2</key>
 			<data>
-			/3C7WpWgDa5N6t8DaXFM9mbSgWMLyMA2BqPgeP5YeVI=
+			syLcDPg+LCdcPC4lOwP/OYnj0R/5ln9/7mBDKinFmNY=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
@@ -405,22 +405,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			n2xn9ipSH4qKQJyyO5IuznkUVX4=
+			e1QCoKySQpnDfYvCERBFN6RauL0=
 			</data>
 			<key>hash2</key>
 			<data>
-			YZ/6sS7x1hPm4h0ANAOKHEC8vVvuZuAvL/JJqJNUkGM=
+			6zYHYgZ6kJNgTpoirH69vzoQe9ieTmBgc4t95uF1bdo=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UqwCOCP/PZ1E/A6PqCAJCKhVEmI=
+			nYNfkOExhhHU6rNWAooFM99o1Xk=
 			</data>
 			<key>hash2</key>
 			<data>
-			/3C7WpWgDa5N6t8DaXFM9mbSgWMLyMA2BqPgeP5YeVI=
+			syLcDPg+LCdcPC4lOwP/OYnj0R/5ln9/7mBDKinFmNY=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/i386.swiftinterface</key>
@@ -438,22 +438,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			n2xn9ipSH4qKQJyyO5IuznkUVX4=
+			e1QCoKySQpnDfYvCERBFN6RauL0=
 			</data>
 			<key>hash2</key>
 			<data>
-			YZ/6sS7x1hPm4h0ANAOKHEC8vVvuZuAvL/JJqJNUkGM=
+			6zYHYgZ6kJNgTpoirH69vzoQe9ieTmBgc4t95uF1bdo=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PjkGA8mXdDQE/XNOMII0xniE9gk=
+			JHizGCRdVwtw3yDnd0fa9de1H+0=
 			</data>
 			<key>hash2</key>
 			<data>
-			sJlK2bSJhWHRv5Rf4xjzQJjeedA0nxPsTeMDBDSFR+c=
+			llhYV/lIjj1p1JCDhQXXqVUJv+yjOzc5Oz5q+WIj+No=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -471,22 +471,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YGXgM5hgrdwFuoVjCnkJ8/64gyw=
+			4Ped6RHvQ4/2FMJYn2r84YopZrI=
 			</data>
 			<key>hash2</key>
 			<data>
-			okgLRgEexdchTTvcUdg6cdKPf7MjodcACx/VBpOYmVA=
+			PQmHCzzKDrxswBSNjxk7hEdrA2N3v4KzKLdQsDpJaDg=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PjkGA8mXdDQE/XNOMII0xniE9gk=
+			JHizGCRdVwtw3yDnd0fa9de1H+0=
 			</data>
 			<key>hash2</key>
 			<data>
-			sJlK2bSJhWHRv5Rf4xjzQJjeedA0nxPsTeMDBDSFR+c=
+			llhYV/lIjj1p1JCDhQXXqVUJv+yjOzc5Oz5q+WIj+No=
 			</data>
 		</dict>
 		<key>Modules/Appier.swiftmodule/x86_64.swiftinterface</key>
@@ -504,11 +504,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YGXgM5hgrdwFuoVjCnkJ8/64gyw=
+			4Ped6RHvQ4/2FMJYn2r84YopZrI=
 			</data>
 			<key>hash2</key>
 			<data>
-			okgLRgEexdchTTvcUdg6cdKPf7MjodcACx/VBpOYmVA=
+			PQmHCzzKDrxswBSNjxk7hEdrA2N3v4KzKLdQsDpJaDg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
