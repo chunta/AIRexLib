@@ -1,0 +1,911 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Appier
+@_exported import Appier
+import CommonCrypto
+import CoreFoundation
+import Dispatch
+import Foundation
+import Security
+import Swift
+import UIKit
+import WebKit
+import os
+import zlib
+@objc(AIDConversion) @objcMembers public class Conversion : ObjectiveC.NSObject {
+  @objc final public let identifier: Swift.String
+  @objc public var name: Swift.String?
+  @objc public var totalQuantity: Swift.Int
+  @objc public var totalPrice: Swift.Double
+  @objc public var couponCodes: [Swift.String]
+  @objc public var items: [Appier.ConversionItem]
+  @objc @available(*, deprecated, renamed: "identifier")
+  public var conversionId: Swift.String {
+    @objc get
+  }
+  @objc @available(*, deprecated, renamed: "name")
+  public var conversionName: Swift.String? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @available(*, deprecated, renamed: "numberOfItems")
+  public var totalItems: Swift.Int {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public init(identifier: Swift.String)
+  @objc public var dictionary: [Swift.String : Any] {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Conversion : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @available(*, deprecated)
+@objc @objcMembers final public class AIDManager : ObjectiveC.NSObject {
+  @objc @available(*, deprecated, renamed: "configure(apiKey:)")
+  final public func initWithApiKey(_ key: Swift.String)
+  @objc @available(*, deprecated, renamed: "startLogging")
+  final public func initPage(_ vctl: UIKit.UIViewController, PageType: Swift.String, Scrollable: UIKit.UIScrollView?, IsLogin: Swift.Bool, ItemPrice: Foundation.NSNumber?, CartPrice: Foundation.NSNumber?)
+  @objc @available(*, deprecated, renamed: "startLogging")
+  final public func initPage(_ vctl: UIKit.UIViewController, pageType: Swift.String, scrollable: UIKit.UIScrollView?, isLogin: Swift.Bool, itemPrice: Foundation.NSNumber?, cartPrice: Foundation.NSNumber?)
+  @objc @available(*, deprecated)
+  final public func deinitPage()
+  @objc @available(*, deprecated)
+  final public func sendConversionInfo(_ conversionInfo: Appier.Conversion)
+  @objc @available(*, deprecated, renamed: "shared")
+  public static func instance() -> Appier.AIDManager
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc(AIDAiDeal) @objcMembers final public class AiDeal : ObjectiveC.NSObject {
+  @objc final public var presenterView: Appier.CampaignPresenterView? {
+    @objc get
+  }
+  @objc final public func configure(apiKey: Swift.String)
+  @objc(startLoggingWithViewController:) final public func startLogging(_ viewController: UIKit.UIViewController)
+  @objc(startLoggingWithViewController:scrollView:attributes:) final public func startLogging(_ viewController: UIKit.UIViewController, scrollView: UIKit.UIScrollView?, attributes: [Appier.Page.AttributeName : Any])
+  @objc(startLoggingWithViewController:attributes:) final public func startLogging(_ viewController: UIKit.UIViewController, attributes: [Appier.Page.AttributeName : Any])
+  @objc(startLoggingWithViewController:scrollView:) final public func startLogging(_ viewController: UIKit.UIViewController, scrollView: UIKit.UIScrollView?)
+  @objc final public func stopLogging()
+  @objc(logConversion:) final public func log(_ conversion: Appier.Conversion)
+  @objc public static var shared: Appier.AiDeal
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension PageType : Swift.Codable {
+}
+@objc @_hasMissingDesignatedInitializers public class CampaignPresenterView : ObjectiveC.NSObject {
+  weak public var presenterViewController: UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension CampaignPresenterView {
+  public func presentOffer(contentHTML: Swift.String, css: Swift.String)
+  public func dismissOffer()
+  public func presentCoupon(contentHTML: Swift.String, css: Swift.String, couponCode: Swift.String, requestCopyBlock: (() -> Swift.Void)? = nil)
+  public func showBadge(text: Swift.String?, backgroundColor: UIKit.UIColor, imageURL: Foundation.URL)
+  public func setBadgeText(_ text: Swift.String?)
+  public func hideBadge()
+  public func showToast(message: Swift.String)
+}
+extension CampaignPresenterView : UIKit.UIViewControllerTransitioningDelegate {
+  @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+@objc(AIDConversionItem) @objcMembers public class ConversionItem : ObjectiveC.NSObject {
+  @objc final public let identifier: Swift.String
+  @objc public var name: Swift.String?
+  @objc public var url: Foundation.URL?
+  @objc public var price: Swift.Double
+  @objc public var quantity: Swift.Int
+  @objc @available(*, deprecated, renamed: "quantity")
+  public var count: Swift.Int {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public init(identifier: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension ConversionItem : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@available(*, deprecated, renamed: "ConversionItem")
+public typealias AIDConversionItem = Appier.ConversionItem
+public protocol SocketLogger : AnyObject {
+  var log: Swift.Bool { get set }
+  func log(_ message: @autoclosure () -> Swift.String, type: Swift.String)
+  func error(_ message: @autoclosure () -> Swift.String, type: Swift.String)
+}
+extension SocketLogger {
+  public func log(_ message: @autoclosure () -> Swift.String, type: Swift.String)
+  public func error(_ message: @autoclosure () -> Swift.String, type: Swift.String)
+}
+@objc @_hasMissingDesignatedInitializers open class SocketIOSSLSecurity : ObjectiveC.NSObject {
+  final public let security: Appier.StarscreamSSLSecurity
+  @objc public convenience init(usePublicKeys: Swift.Bool = true)
+  public convenience init(certs: [Appier.SSLCert], usePublicKeys: Swift.Bool)
+  public func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol SocketData {
+  func socketRepresentation() throws -> Appier.SocketData
+}
+extension SocketData {
+  public func socketRepresentation() -> Appier.SocketData
+}
+extension Array : Appier.SocketData {
+}
+extension Bool : Appier.SocketData {
+}
+extension Dictionary : Appier.SocketData {
+}
+extension Double : Appier.SocketData {
+}
+extension Int : Appier.SocketData {
+}
+extension NSArray : Appier.SocketData {
+}
+extension Data : Appier.SocketData {
+}
+extension NSData : Appier.SocketData {
+}
+extension NSDictionary : Appier.SocketData {
+}
+extension NSString : Appier.SocketData {
+}
+extension NSNull : Appier.SocketData {
+}
+extension String : Appier.SocketData {
+}
+public typealias AckCallback = ([Any]) -> ()
+public typealias NormalCallback = ([Any], Appier.SocketAckEmitter) -> ()
+public typealias Post = (msg: Swift.String, completion: (() -> ())?)
+public protocol SocketParsable : AnyObject {
+  func parseBinaryData(_ data: Foundation.Data) -> Appier.SocketPacket?
+  func parseSocketMessage(_ message: Swift.String) -> Appier.SocketPacket?
+}
+public enum SocketParsableError : Swift.Error {
+  case invalidDataArray
+  case invalidPacket
+  case invalidPacketType
+  public static func == (a: Appier.SocketParsableError, b: Appier.SocketParsableError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol SocketDataBufferable : AnyObject {
+  var waitingPackets: [Appier.SocketPacket] { get set }
+}
+extension SocketParsable where Self : Appier.SocketDataBufferable, Self : Appier.SocketManagerSpec {
+  public func parseSocketMessage(_ message: Swift.String) -> Appier.SocketPacket?
+  public func parseBinaryData(_ data: Foundation.Data) -> Appier.SocketPacket?
+}
+public struct SocketPacket : Swift.CustomStringConvertible {
+  public let nsp: Swift.String
+  public let id: Swift.Int
+  public let type: Appier.SocketPacket.PacketType
+  public var binary: [Foundation.Data] {
+    get
+  }
+  public var data: [Any] {
+    get
+  }
+  public var args: [Any] {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public var event: Swift.String {
+    get
+  }
+  public var packetString: Swift.String {
+    get
+  }
+}
+extension SocketPacket {
+  public enum PacketType : Swift.Int {
+    case connect
+    case disconnect
+    case event
+    case ack
+    case error
+    case binaryEvent
+    case binaryAck
+    public var isBinary: Swift.Bool {
+      get
+    }
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc public protocol SocketManagerSpec : AnyObject, Appier.SocketEngineClient {
+  @objc var defaultSocket: Appier.SocketIOClient { get }
+  @objc var engine: Appier.SocketEngineSpec? { get set }
+  @objc var forceNew: Swift.Bool { get set }
+  @objc var handleQueue: Dispatch.DispatchQueue { get set }
+  @objc var nsps: [Swift.String : Appier.SocketIOClient] { get set }
+  @objc var reconnects: Swift.Bool { get set }
+  @objc var reconnectWait: Swift.Int { get set }
+  @objc var reconnectWaitMax: Swift.Int { get set }
+  @objc var randomizationFactor: Swift.Double { get set }
+  @objc var socketURL: Foundation.URL { get }
+  @objc var status: Appier.SocketIOStatus { get }
+  @objc func connect()
+  @objc func connectSocket(_ socket: Appier.SocketIOClient)
+  @objc func didDisconnect(reason: Swift.String)
+  @objc func disconnect()
+  @objc func disconnectSocket(_ socket: Appier.SocketIOClient)
+  @objc func disconnectSocket(forNamespace nsp: Swift.String)
+  @objc func emitAll(_ event: Swift.String, withItems items: [Any])
+  @objc func reconnect()
+  @objc @discardableResult
+  func removeSocket(_ socket: Appier.SocketIOClient) -> Appier.SocketIOClient?
+  @objc func socket(forNamespace nsp: Swift.String) -> Appier.SocketIOClient
+}
+@objc open class SocketManager : ObjectiveC.NSObject, Appier.SocketManagerSpec, Appier.SocketParsable, Appier.SocketDataBufferable, Appier.ConfigSettable {
+  @objc public var defaultSocket: Appier.SocketIOClient {
+    @objc get
+  }
+  @objc final public let socketURL: Foundation.URL
+  public var config: Appier.SocketIOClientConfiguration {
+    get
+    set(newValue)
+  }
+  @objc public var engine: Appier.SocketEngineSpec?
+  @objc public var forceNew: Swift.Bool
+  @objc public var handleQueue: Dispatch.DispatchQueue
+  @objc public var nsps: [Swift.String : Appier.SocketIOClient]
+  @objc public var reconnects: Swift.Bool
+  @objc public var reconnectWait: Swift.Int
+  @objc public var reconnectWaitMax: Swift.Int
+  @objc public var randomizationFactor: Swift.Double
+  @objc public var status: Appier.SocketIOStatus {
+    @objc get
+  }
+  public var waitingPackets: [Appier.SocketPacket]
+  public init(socketURL: Foundation.URL, config: Appier.SocketIOClientConfiguration = [])
+  @objc public convenience init(socketURL: Foundation.URL, config: [Swift.String : Any]?)
+  @objc deinit
+  @objc open func connect()
+  @objc open func connectSocket(_ socket: Appier.SocketIOClient)
+  @objc open func didDisconnect(reason: Swift.String)
+  @objc open func disconnect()
+  @objc open func disconnectSocket(_ socket: Appier.SocketIOClient)
+  @objc open func disconnectSocket(forNamespace nsp: Swift.String)
+  open func emitAll(clientEvent event: Appier.SocketClientEvent, data: [Any])
+  open func emitAll(_ event: Swift.String, _ items: Appier.SocketData...)
+  @objc open func emitAll(_ event: Swift.String, withItems items: [Any])
+  @objc open func engineDidClose(reason: Swift.String)
+  @objc open func engineDidError(reason: Swift.String)
+  @objc open func engineDidOpen(reason: Swift.String)
+  @objc open func engineDidReceivePong()
+  @objc open func engineDidSendPing()
+  @objc open func engineDidWebsocketUpgrade(headers: [Swift.String : Swift.String])
+  @objc open func parseEngineMessage(_ msg: Swift.String)
+  @objc open func parseEngineBinaryData(_ data: Foundation.Data)
+  @objc open func reconnect()
+  @discardableResult
+  @objc open func removeSocket(_ socket: Appier.SocketIOClient) -> Appier.SocketIOClient?
+  open func setConfigs(_ config: Appier.SocketIOClientConfiguration)
+  @objc open func socket(forNamespace nsp: Swift.String) -> Appier.SocketIOClient
+  @objc override dynamic public init()
+}
+@objc public protocol SocketEngineClient {
+  @objc func engineDidError(reason: Swift.String)
+  @objc func engineDidClose(reason: Swift.String)
+  @objc func engineDidOpen(reason: Swift.String)
+  @objc func engineDidReceivePong()
+  @objc func engineDidSendPing()
+  @objc func parseEngineMessage(_ msg: Swift.String)
+  @objc func parseEngineBinaryData(_ data: Foundation.Data)
+  @objc func engineDidWebsocketUpgrade(headers: [Swift.String : Swift.String])
+}
+public protocol SocketEngineWebsocket : Appier.SocketEngineSpec {
+  func sendWebSocketMessage(_ str: Swift.String, withType type: Appier.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())?)
+}
+extension SocketEngineWebsocket {
+  public func sendWebSocketMessage(_ str: Swift.String, withType type: Appier.SocketEnginePacketType, withData data: [Foundation.Data], completion: (() -> ())?)
+}
+public protocol SocketEnginePollable : Appier.SocketEngineSpec {
+  var invalidated: Swift.Bool { get }
+  var postWait: [Appier.Post] { get set }
+  var session: Foundation.URLSession? { get }
+  var waitingForPoll: Swift.Bool { get set }
+  var waitingForPost: Swift.Bool { get set }
+  func doPoll()
+  func sendPollMessage(_ message: Swift.String, withType type: Appier.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())?)
+  func stopPolling()
+}
+extension SocketEnginePollable {
+  public func doPoll()
+  public func sendPollMessage(_ message: Swift.String, withType type: Appier.SocketEnginePacketType, withData datas: [Foundation.Data], completion: (() -> ())? = nil)
+  public func stopPolling()
+}
+@objc public protocol SocketEngineSpec {
+  @objc var client: Appier.SocketEngineClient? { get set }
+  @objc var closed: Swift.Bool { get }
+  @objc var compress: Swift.Bool { get }
+  @objc var connected: Swift.Bool { get }
+  @objc var connectParams: [Swift.String : Any]? { get set }
+  @objc var cookies: [Foundation.HTTPCookie]? { get }
+  @objc var engineQueue: Dispatch.DispatchQueue { get }
+  @objc var extraHeaders: [Swift.String : Swift.String]? { get set }
+  @objc var fastUpgrade: Swift.Bool { get }
+  @objc var forcePolling: Swift.Bool { get }
+  @objc var forceWebsockets: Swift.Bool { get }
+  @objc var polling: Swift.Bool { get }
+  @objc var probing: Swift.Bool { get }
+  @objc var sid: Swift.String { get }
+  @objc var socketPath: Swift.String { get }
+  @objc var urlPolling: Foundation.URL { get }
+  @objc var urlWebSocket: Foundation.URL { get }
+  @objc @available(*, deprecated, message: "No longer needed, if we're not polling, then we must be doing websockets")
+  var websocket: Swift.Bool { get }
+  @objc var ws: Appier.WebSocket? { get }
+  @objc init(client: Appier.SocketEngineClient, url: Foundation.URL, options: [Swift.String : Any]?)
+  @objc func connect()
+  @objc func didError(reason: Swift.String)
+  @objc func disconnect(reason: Swift.String)
+  @objc func doFastUpgrade()
+  @objc func flushWaitingForPostToWebSocket()
+  @objc func parseEngineData(_ data: Foundation.Data)
+  @objc func parseEngineMessage(_ message: Swift.String)
+  @objc func write(_ msg: Swift.String, withType type: Appier.SocketEnginePacketType, withData data: [Foundation.Data], completion: (() -> ())?)
+}
+@objc public enum SocketEnginePacketType : Swift.Int {
+  case open
+  case close
+  case ping
+  case pong
+  case message
+  case upgrade
+  case noop
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+@objc open class SocketEngine : ObjectiveC.NSObject, Foundation.URLSessionDelegate, Appier.SocketEnginePollable, Appier.SocketEngineWebsocket, Appier.ConfigSettable {
+  @objc final public let engineQueue: Dispatch.DispatchQueue
+  @objc public var connectParams: [Swift.String : Any]? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var extraHeaders: [Swift.String : Swift.String]?
+  public var postWait: [Appier.Post]
+  public var waitingForPoll: Swift.Bool
+  public var waitingForPost: Swift.Bool
+  @objc public var closed: Swift.Bool {
+    get
+  }
+  @objc public var compress: Swift.Bool {
+    get
+  }
+  @objc public var connected: Swift.Bool {
+    get
+  }
+  @objc public var cookies: [Foundation.HTTPCookie]? {
+    get
+  }
+  @objc public var fastUpgrade: Swift.Bool {
+    get
+  }
+  @objc public var forcePolling: Swift.Bool {
+    get
+  }
+  @objc public var forceWebsockets: Swift.Bool {
+    get
+  }
+  public var invalidated: Swift.Bool {
+    get
+  }
+  @objc public var polling: Swift.Bool {
+    get
+  }
+  @objc public var probing: Swift.Bool {
+    get
+  }
+  public var session: Foundation.URLSession? {
+    get
+  }
+  @objc public var sid: Swift.String {
+    get
+  }
+  @objc public var socketPath: Swift.String {
+    get
+  }
+  @objc public var urlPolling: Foundation.URL {
+    get
+  }
+  @objc public var urlWebSocket: Foundation.URL {
+    get
+  }
+  @available(*, deprecated, message: "No longer needed, if we're not polling, then we must be doing websockets")
+  @objc public var websocket: Swift.Bool {
+    get
+  }
+  public var enableSOCKSProxy: Swift.Bool {
+    get
+  }
+  @objc public var ws: Appier.WebSocket? {
+    get
+  }
+  @objc weak public var client: Appier.SocketEngineClient?
+  public init(client: Appier.SocketEngineClient, url: Foundation.URL, config: Appier.SocketIOClientConfiguration)
+  @objc required public convenience init(client: Appier.SocketEngineClient, url: Foundation.URL, options: [Swift.String : Any]?)
+  @objc deinit
+  @objc open func connect()
+  @objc open func didError(reason: Swift.String)
+  @objc open func disconnect(reason: Swift.String)
+  @objc open func doFastUpgrade()
+  @objc open func flushWaitingForPostToWebSocket()
+  @objc open func parseEngineData(_ data: Foundation.Data)
+  @objc open func parseEngineMessage(_ message: Swift.String)
+  open func setConfigs(_ config: Appier.SocketIOClientConfiguration)
+  @objc open func write(_ msg: Swift.String, withType type: Appier.SocketEnginePacketType, withData data: [Foundation.Data], completion: (() -> ())? = nil)
+  @objc override dynamic public init()
+}
+extension SocketEngine {
+  public func URLSession(session: Foundation.URLSession, didBecomeInvalidWithError error: Foundation.NSError?)
+}
+public struct SocketIOClientConfiguration : Swift.ExpressibleByArrayLiteral, Swift.Collection, Swift.MutableCollection {
+  public typealias Element = Appier.SocketIOClientOption
+  public typealias Index = Swift.Array<Appier.SocketIOClientOption>.Index
+  public typealias Iterator = Swift.Array<Appier.SocketIOClientOption>.Iterator
+  public typealias SubSequence = Swift.Array<Appier.SocketIOClientOption>.SubSequence
+  public var startIndex: Appier.SocketIOClientConfiguration.Index {
+    get
+  }
+  public var endIndex: Appier.SocketIOClientConfiguration.Index {
+    get
+  }
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var count: Appier.SocketIOClientConfiguration.Index.Stride {
+    get
+  }
+  public var first: Appier.SocketIOClientConfiguration.Element? {
+    get
+  }
+  public subscript(position: Appier.SocketIOClientConfiguration.Index) -> Appier.SocketIOClientConfiguration.Element {
+    get
+    set(newValue)
+  }
+  public subscript(bounds: Swift.Range<Appier.SocketIOClientConfiguration.Index>) -> Appier.SocketIOClientConfiguration.SubSequence {
+    get
+    set(newValue)
+  }
+  public init(arrayLiteral elements: Appier.SocketIOClientConfiguration.Element...)
+  public func makeIterator() -> Appier.SocketIOClientConfiguration.Iterator
+  public func index(after i: Appier.SocketIOClientConfiguration.Index) -> Appier.SocketIOClientConfiguration.Index
+  public mutating func insert(_ element: Appier.SocketIOClientConfiguration.Element, replacing replace: Swift.Bool = true)
+  public typealias ArrayLiteralElement = Appier.SocketIOClientConfiguration.Element
+  public typealias Indices = Swift.DefaultIndices<Appier.SocketIOClientConfiguration>
+}
+public protocol ConfigSettable {
+  mutating func setConfigs(_ config: Appier.SocketIOClientConfiguration)
+}
+@objc @_hasMissingDesignatedInitializers final public class SocketAnyEvent : ObjectiveC.NSObject {
+  @objc final public let event: Swift.String
+  @objc final public let items: [Any]?
+  @objc override final public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc open class SocketIOClient : ObjectiveC.NSObject, Appier.SocketIOClientSpec {
+  @objc final public let nsp: Swift.String
+  @objc public var sid: Swift.String {
+    @objc get
+  }
+  public var anyHandler: ((Appier.SocketAnyEvent) -> ())? {
+    get
+  }
+  public var handlers: [Appier.SocketEventHandler] {
+    get
+  }
+  @objc weak public var manager: Appier.SocketManagerSpec? {
+    get
+  }
+  @objc public var rawEmitView: Appier.SocketRawView {
+    @objc get
+  }
+  @objc public var status: Appier.SocketIOStatus {
+    @objc get
+  }
+  @objc public init(manager: Appier.SocketManagerSpec, nsp: Swift.String)
+  @objc deinit
+  @objc open func connect()
+  @objc open func connect(timeoutAfter: Swift.Double, withHandler handler: (() -> ())?)
+  open func didConnect(toNamespace namespace: Swift.String)
+  open func didDisconnect(reason: Swift.String)
+  @objc open func disconnect()
+  open func emit(_ event: Swift.String, _ items: Appier.SocketData..., completion: (() -> ())? = nil)
+  @objc open func emit(_ event: Swift.String, with items: [Any])
+  @objc open func emit(_ event: Swift.String, with items: [Any], completion: (() -> ())? = nil)
+  open func emitWithAck(_ event: Swift.String, _ items: Appier.SocketData...) -> Appier.OnAckCallback
+  @objc open func emitWithAck(_ event: Swift.String, with items: [Any]) -> Appier.OnAckCallback
+  open func emitAck(_ ack: Swift.Int, with items: [Any])
+  @objc open func handleAck(_ ack: Swift.Int, data: [Any])
+  open func handleClientEvent(_ event: Appier.SocketClientEvent, data: [Any])
+  @objc open func handleEvent(_ event: Swift.String, data: [Any], isInternalMessage: Swift.Bool, withAck ack: Swift.Int = -1)
+  open func handlePacket(_ packet: Appier.SocketPacket)
+  @objc open func leaveNamespace()
+  @objc open func joinNamespace()
+  open func off(clientEvent event: Appier.SocketClientEvent)
+  @objc open func off(_ event: Swift.String)
+  @objc open func off(id: Foundation.UUID)
+  @discardableResult
+  @objc open func on(_ event: Swift.String, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  @discardableResult
+  open func on(clientEvent event: Appier.SocketClientEvent, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  @discardableResult
+  open func once(clientEvent event: Appier.SocketClientEvent, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  @discardableResult
+  @objc open func once(_ event: Swift.String, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  @objc open func onAny(_ handler: @escaping (Appier.SocketAnyEvent) -> ())
+  @available(*, unavailable, message: "Call the manager's reconnect method")
+  @objc open func reconnect()
+  @objc open func removeAllHandlers()
+  @objc open func setReconnecting(reason: Swift.String)
+  @objc override dynamic public init()
+}
+public enum SocketIOClientOption {
+  case compress
+  case connectParams([Swift.String : Any])
+  case cookies([Foundation.HTTPCookie])
+  case extraHeaders([Swift.String : Swift.String])
+  case forceNew(Swift.Bool)
+  case forcePolling(Swift.Bool)
+  case forceWebsockets(Swift.Bool)
+  case enableSOCKSProxy(Swift.Bool)
+  case handleQueue(Dispatch.DispatchQueue)
+  case log(Swift.Bool)
+  case logger(Appier.SocketLogger)
+  case path(Swift.String)
+  case reconnects(Swift.Bool)
+  case reconnectAttempts(Swift.Int)
+  case reconnectWait(Swift.Int)
+  case reconnectWaitMax(Swift.Int)
+  case randomizationFactor(Swift.Double)
+  case secure(Swift.Bool)
+  case security(Appier.SocketIOSSLSecurity)
+  case selfSigned(Swift.Bool)
+  case sessionDelegate(Foundation.URLSessionDelegate)
+  public var description: Swift.String {
+    get
+  }
+  public static func == (lhs: Appier.SocketIOClientOption, rhs: Appier.SocketIOClientOption) -> Swift.Bool
+}
+public struct SocketEventHandler {
+  public let event: Swift.String
+  public let id: Foundation.UUID
+  public let callback: Appier.NormalCallback
+  public func executeCallback(with items: [Any], withAck ack: Swift.Int, withSocket socket: Appier.SocketIOClient)
+}
+@objc @_hasMissingDesignatedInitializers final public class SocketRawView : ObjectiveC.NSObject {
+  final public func emit(_ event: Swift.String, _ items: Appier.SocketData...)
+  @objc final public func emit(_ event: Swift.String, with items: [Any])
+  final public func emitWithAck(_ event: Swift.String, _ items: Appier.SocketData...) -> Appier.OnAckCallback
+  @objc final public func emitWithAck(_ event: Swift.String, with items: [Any]) -> Appier.OnAckCallback
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers final public class SocketRawAckView : ObjectiveC.NSObject {
+  final public func with(_ items: Appier.SocketData...)
+  @objc final public func with(_ items: [Any])
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol SocketIOClientSpec : AnyObject {
+  var anyHandler: ((Appier.SocketAnyEvent) -> ())? { get }
+  var handlers: [Appier.SocketEventHandler] { get }
+  var manager: Appier.SocketManagerSpec? { get }
+  var nsp: Swift.String { get }
+  var rawEmitView: Appier.SocketRawView { get }
+  var status: Appier.SocketIOStatus { get }
+  func connect()
+  func connect(timeoutAfter: Swift.Double, withHandler handler: (() -> ())?)
+  func didConnect(toNamespace namespace: Swift.String)
+  func didDisconnect(reason: Swift.String)
+  func didError(reason: Swift.String)
+  func disconnect()
+  func emit(_ event: Swift.String, _ items: Appier.SocketData..., completion: (() -> ())?)
+  func emitAck(_ ack: Swift.Int, with items: [Any])
+  func emitWithAck(_ event: Swift.String, _ items: Appier.SocketData...) -> Appier.OnAckCallback
+  func handleAck(_ ack: Swift.Int, data: [Any])
+  func handleClientEvent(_ event: Appier.SocketClientEvent, data: [Any])
+  func handleEvent(_ event: Swift.String, data: [Any], isInternalMessage: Swift.Bool, withAck ack: Swift.Int)
+  func handlePacket(_ packet: Appier.SocketPacket)
+  func leaveNamespace()
+  func joinNamespace()
+  func off(clientEvent event: Appier.SocketClientEvent)
+  func off(_ event: Swift.String)
+  func off(id: Foundation.UUID)
+  func on(_ event: Swift.String, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  func on(clientEvent event: Appier.SocketClientEvent, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  func once(clientEvent event: Appier.SocketClientEvent, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  func once(_ event: Swift.String, callback: @escaping Appier.NormalCallback) -> Foundation.UUID
+  func onAny(_ handler: @escaping (Appier.SocketAnyEvent) -> ())
+  func removeAllHandlers()
+  func setReconnecting(reason: Swift.String)
+}
+extension SocketIOClientSpec {
+  public func didError(reason: Swift.String)
+}
+public enum SocketClientEvent : Swift.String {
+  case connect
+  case disconnect
+  case error
+  case ping
+  case pong
+  case reconnect
+  case reconnectAttempt
+  case statusChange
+  case websocketUpgrade
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+@objc public enum SocketIOStatus : Swift.Int, Swift.CustomStringConvertible {
+  case notConnected
+  case disconnected
+  case connecting
+  case connected
+  public var active: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+public enum SocketAckStatus : Swift.String {
+  case noAck
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc final public class SocketAckEmitter : ObjectiveC.NSObject {
+  @objc final public var rawEmitView: Appier.SocketRawAckView {
+    @objc get
+  }
+  final public var expected: Swift.Bool {
+    get
+  }
+  public init(socket: Appier.SocketIOClient, ackNum: Swift.Int)
+  final public func with(_ items: Appier.SocketData...)
+  @objc final public func with(_ items: [Any])
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers final public class OnAckCallback : ObjectiveC.NSObject {
+  @objc deinit
+  @objc final public func timingOut(after seconds: Swift.Double, callback: @escaping Appier.AckCallback)
+  @objc override dynamic public init()
+}
+public struct SSLClientCertificateError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String?
+}
+public class SSLClientCertificate {
+  public convenience init(pkcs12Path: Swift.String, password: Swift.String) throws
+  public init(identity: Security.SecIdentity, identityCertificate: Security.SecCertificate)
+  public convenience init(pkcs12Url: Foundation.URL, password: Swift.String) throws
+  public init(pkcs12Url: Foundation.URL, importOptions: CoreFoundation.CFDictionary) throws
+  @objc deinit
+}
+public var WebsocketDidConnectNotification: Swift.String
+public var WebsocketDidDisconnectNotification: Swift.String
+public var WebsocketDisconnectionErrorKeyName: Swift.String
+public enum CloseCode : Swift.UInt16 {
+  case normal
+  case goingAway
+  case protocolError
+  case protocolUnhandledType
+  case noStatusReceived
+  case encoding
+  case policyViolated
+  case messageTooBig
+  public typealias RawValue = Swift.UInt16
+  public init?(rawValue: Swift.UInt16)
+  public var rawValue: Swift.UInt16 {
+    get
+  }
+}
+public enum ErrorType : Swift.Error {
+  case outputStreamWriteError
+  case compressionError
+  case invalidSSLError
+  case writeTimeoutError
+  case protocolError
+  case upgradeError
+  case closeError
+  public static func == (a: Appier.ErrorType, b: Appier.ErrorType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct WSError : Swift.Error {
+  public let type: Appier.ErrorType
+  public let message: Swift.String
+  public let code: Swift.Int
+}
+public protocol WebSocketClient : AnyObject {
+  var delegate: Appier.WebSocketDelegate? { get set }
+  var pongDelegate: Appier.WebSocketPongDelegate? { get set }
+  var disableSSLCertValidation: Swift.Bool { get set }
+  var overrideTrustHostname: Swift.Bool { get set }
+  var desiredTrustHostname: Swift.String? { get set }
+  var sslClientCertificate: Appier.SSLClientCertificate? { get set }
+  var security: Appier.SSLTrustValidator? { get set }
+  var enabledSSLCipherSuites: [Security.SSLCipherSuite]? { get set }
+  var isConnected: Swift.Bool { get }
+  func connect()
+  func disconnect(forceTimeout: Foundation.TimeInterval?, closeCode: Swift.UInt16)
+  func write(string: Swift.String, completion: (() -> ())?)
+  func write(data: Foundation.Data, completion: (() -> ())?)
+  func write(ping: Foundation.Data, completion: (() -> ())?)
+  func write(pong: Foundation.Data, completion: (() -> ())?)
+}
+extension WebSocketClient {
+  public func write(string: Swift.String)
+  public func write(data: Foundation.Data)
+  public func write(ping: Foundation.Data)
+  public func write(pong: Foundation.Data)
+  public func disconnect()
+}
+public struct SSLSettings {
+  public let useSSL: Swift.Bool
+  public let disableCertValidation: Swift.Bool
+  public var overrideTrustHostname: Swift.Bool
+  public var desiredTrustHostname: Swift.String?
+  public let sslClientCertificate: Appier.SSLClientCertificate?
+  public let cipherSuites: [Security.SSLCipherSuite]?
+}
+public protocol WSStreamDelegate : AnyObject {
+  func newBytesInStream()
+  func streamDidError(error: Swift.Error?)
+}
+public protocol WSStream {
+  var delegate: Appier.WSStreamDelegate? { get set }
+  func connect(url: Foundation.URL, port: Swift.Int, timeout: Foundation.TimeInterval, ssl: Appier.SSLSettings, completion: @escaping ((Swift.Error?) -> Swift.Void))
+  func write(data: Foundation.Data) -> Swift.Int
+  func read() -> Foundation.Data?
+  func cleanup()
+  func sslTrust() -> (trust: Security.SecTrust?, domain: Swift.String?)
+}
+@objc @_inheritsConvenienceInitializers open class FoundationStream : ObjectiveC.NSObject, Appier.WSStream, Foundation.StreamDelegate {
+  weak public var delegate: Appier.WSStreamDelegate?
+  public var enableSOCKSProxy: Swift.Bool
+  public func connect(url: Foundation.URL, port: Swift.Int, timeout: Foundation.TimeInterval, ssl: Appier.SSLSettings, completion: @escaping ((Swift.Error?) -> Swift.Void))
+  public func write(data: Foundation.Data) -> Swift.Int
+  public func read() -> Foundation.Data?
+  public func cleanup()
+  public func sslTrust() -> (trust: Security.SecTrust?, domain: Swift.String?)
+  @objc open func stream(_ aStream: Foundation.Stream, handle eventCode: Foundation.Stream.Event)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol WebSocketDelegate : AnyObject {
+  func websocketDidConnect(socket: Appier.WebSocketClient)
+  func websocketDidDisconnect(socket: Appier.WebSocketClient, error: Swift.Error?)
+  func websocketDidReceiveMessage(socket: Appier.WebSocketClient, text: Swift.String)
+  func websocketDidReceiveData(socket: Appier.WebSocketClient, data: Foundation.Data)
+}
+public protocol WebSocketPongDelegate : AnyObject {
+  func websocketDidReceivePong(socket: Appier.WebSocketClient, data: Foundation.Data?)
+}
+public protocol WebSocketAdvancedDelegate : AnyObject {
+  func websocketDidConnect(socket: Appier.WebSocket)
+  func websocketDidDisconnect(socket: Appier.WebSocket, error: Swift.Error?)
+  func websocketDidReceiveMessage(socket: Appier.WebSocket, text: Swift.String, response: Appier.WebSocket.WSResponse)
+  func websocketDidReceiveData(socket: Appier.WebSocket, data: Foundation.Data, response: Appier.WebSocket.WSResponse)
+  func websocketHttpUpgrade(socket: Appier.WebSocket, request: Swift.String)
+  func websocketHttpUpgrade(socket: Appier.WebSocket, response: Swift.String)
+}
+@objc open class WebSocket : ObjectiveC.NSObject, Foundation.StreamDelegate, Appier.WebSocketClient, Appier.WSStreamDelegate {
+  public enum OpCode : Swift.UInt8 {
+    case continueFrame
+    case textFrame
+    case binaryFrame
+    case connectionClose
+    case ping
+    case pong
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public static var ErrorDomain: Swift.String
+  public var callbackQueue: Dispatch.DispatchQueue
+  @_hasMissingDesignatedInitializers public class WSResponse {
+    public var code: Appier.WebSocket.OpCode
+    public var frameCount: Swift.Int
+    public var buffer: Foundation.NSMutableData?
+    final public let firstFrame: Foundation.Date
+    @objc deinit
+  }
+  weak public var delegate: Appier.WebSocketDelegate?
+  weak public var advancedDelegate: Appier.WebSocketAdvancedDelegate?
+  weak public var pongDelegate: Appier.WebSocketPongDelegate?
+  public var onConnect: (() -> Swift.Void)?
+  public var onDisconnect: ((Swift.Error?) -> Swift.Void)?
+  public var onText: ((Swift.String) -> Swift.Void)?
+  public var onData: ((Foundation.Data) -> Swift.Void)?
+  public var onPong: ((Foundation.Data?) -> Swift.Void)?
+  public var onHttpResponseHeaders: (([Swift.String : Swift.String]) -> Swift.Void)?
+  public var disableSSLCertValidation: Swift.Bool
+  public var overrideTrustHostname: Swift.Bool
+  public var desiredTrustHostname: Swift.String?
+  public var sslClientCertificate: Appier.SSLClientCertificate?
+  public var enableCompression: Swift.Bool
+  public var security: Appier.SSLTrustValidator?
+  public var enabledSSLCipherSuites: [Security.SSLCipherSuite]?
+  public var isConnected: Swift.Bool {
+    get
+  }
+  public var request: Foundation.URLRequest
+  public var currentURL: Foundation.URL {
+    get
+  }
+  public var respondToPingWithPong: Swift.Bool
+  public init(request: Foundation.URLRequest, protocols: [Swift.String]? = nil, stream: Appier.WSStream = FoundationStream())
+  public convenience init(url: Foundation.URL, protocols: [Swift.String]? = nil)
+  public convenience init(url: Foundation.URL, writeQueueQOS: Foundation.QualityOfService, protocols: [Swift.String]? = nil)
+  open func connect()
+  open func disconnect(forceTimeout: Foundation.TimeInterval? = nil, closeCode: Swift.UInt16 = CloseCode.normal.rawValue)
+  open func write(string: Swift.String, completion: (() -> ())? = nil)
+  open func write(data: Foundation.Data, completion: (() -> ())? = nil)
+  open func write(ping: Foundation.Data, completion: (() -> ())? = nil)
+  open func write(pong: Foundation.Data, completion: (() -> ())? = nil)
+  public func newBytesInStream()
+  public func streamDidError(error: Swift.Error?)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol SSLTrustValidator {
+  func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
+}
+open class SSLCert {
+  public init(data: Foundation.Data)
+  public init(key: Security.SecKey)
+  @objc deinit
+}
+open class StarscreamSSLSecurity : Appier.SSLTrustValidator {
+  public var validatedDN: Swift.Bool
+  public var validateEntireChain: Swift.Bool
+  public convenience init(usePublicKeys: Swift.Bool = false)
+  public init(certs: [Appier.SSLCert], usePublicKeys: Swift.Bool)
+  open func isValid(_ trust: Security.SecTrust, domain: Swift.String?) -> Swift.Bool
+  public func extractPublicKey(_ data: Foundation.Data) -> Security.SecKey?
+  public func extractPublicKey(_ cert: Security.SecCertificate, policy: Security.SecPolicy) -> Security.SecKey?
+  public func certificateChain(_ trust: Security.SecTrust) -> [Foundation.Data]
+  public func publicKeyChain(_ trust: Security.SecTrust) -> [Security.SecKey]
+  @objc deinit
+}
+extension Appier.SocketIOClientOption : Swift.Equatable {}
+extension Appier.SocketIOClientOption : Swift.CustomStringConvertible {}
