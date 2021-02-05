@@ -2,8 +2,7 @@
 //  Appier.h
 //  Appier
 //
-//  Created by chunta on 2020/6/23.
-//  Copyright © 2020 chunta. All rights reserved.
+//  Copyright © 2020 Appier. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -25,5 +24,6 @@ FOUNDATION_EXPORT const unsigned char AppierVersionString[];
 #import <Appier/QGNotificationSdk.h>
 #import <Appier/QGNotificationService.h>
 #import <Appier/QGNotificationContentViewController.h>
-#import <Appier/Legacy.h>
-#import <Appier/AIDPage.h>
+#import <Appier/AIDManager.h>
+#import <Appier/AIDPageType.h>
+#import <Appier/AIDConversionInfo.h>
