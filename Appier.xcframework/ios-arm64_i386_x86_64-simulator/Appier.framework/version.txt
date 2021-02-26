@@ -1,4 +1,4 @@
-AppierFramework:v7.6.0
-aiqua-ios-sdk:v7.6.0
-aiqua-ios-notification-sdk:Rex/MT-672/NotificationUseWrongImage
+AppierFramework:v7.7.0
+aiqua-ios-sdk:v7.7.0
+aiqua-ios-notification-sdk:Rex/MT-660/ImproveResourceDownload
 aideal-ios-sdk:v1.0.0
