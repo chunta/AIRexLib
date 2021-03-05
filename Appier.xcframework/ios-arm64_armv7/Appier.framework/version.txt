@@ -1,4 +1,4 @@
 AppierFramework:v7.7.0
 aiqua-ios-sdk:v7.7.0
-aiqua-ios-notification-sdk:Rex/MT-660/ImproveResourceDownload
+aiqua-ios-notification-sdk:Rex/MT-660/ImproveNotificationSdk
 aideal-ios-sdk:v1.0.0
